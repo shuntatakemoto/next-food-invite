@@ -12,8 +12,12 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
     "@tailwindcss/postcss7-compat": "^2.2.17",
+    "@types/emoji-mart": "^3.0.6",
     "autoprefixer": "^9",
+    "emoji-mart": "^3.0.1",
     "next": "11.1.2",
     "postcss": "^7",
     "react": "17.0.2",
