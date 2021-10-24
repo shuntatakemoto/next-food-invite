@@ -1,6 +1,6 @@
 import React from 'react';
-// import { useSelector } from 'react-redux';
-// import { selectUser } from '../../features/userSlice';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../../features/slices/userSlices';
 import Link from 'next/link';
 import LibraryAddIcon from '@material-ui/icons/LibraryAdd';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
@@ -8,7 +8,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import { Emoji } from 'emoji-mart';
 
 export const Header: React.FC = () => {
-  const user = useSelector(selectUser);
+  //   const user = useSelector(selectUser);
+  const user = { uid: '111111' };
   const createLink = `${user.uid}/create-list`;
   const searchLink = `/search-list`;
   const bookmarkLink = `${user.uid}/bookmark-list`;
