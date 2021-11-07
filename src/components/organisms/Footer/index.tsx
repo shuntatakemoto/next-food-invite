@@ -5,14 +5,38 @@ import React from 'react';
 import Link from 'next/link';
 import { Emoji } from 'emoji-mart';
 
-export const Footer: React.FC = () => {
+export type FooterProps = {
+  isSignedIn?: boolean;
+};
+
+export const Footer: React.FC<FooterProps> = ({ isSignedIn = false }) => {
   //   const user = useSelector(selectUser);
-  const user = { uid: '11111' };
+
   return (
+    // <div className='bg-sub-color flex h-16 items-center justify-evenly'>
+    //   {user.uid ? (
+    //     <Link href='/'>
+    //       <p className='text-xl font-bold'>Home</p>
+    //     </Link>
+    //   ) : (
+    //     <div className=''>
+    //       <Emoji emoji='partying_face' size={32} />
+    //     </div>
+    //   )}
+
+    //   {user.uid ? (
+    //     // <button onClick={() => auth.signOut()} className='text-xl'>
+    //     <button className='text-xl font-bold'>Logout</button>
+    //   ) : (
+    //     <div className=''>
+    //       <Emoji emoji='drooling_face' size={32} />
+    //     </div>
+    //   )}
+    // </div>
     <div className='bg-sub-color flex h-16 items-center justify-evenly'>
-      {user.uid ? (
+      {isSignedIn ? (
         <Link href='/'>
-          <p className='text-xl'>Home</p>
+          <p className='text-xl font-bold'>Home</p>
         </Link>
       ) : (
         <div className=''>
@@ -20,9 +44,9 @@ export const Footer: React.FC = () => {
         </div>
       )}
 
-      {user.uid ? (
+      {isSignedIn ? (
         // <button onClick={() => auth.signOut()} className='text-xl'>
-        <button className='text-xl'>Logout</button>
+        <button className='text-xl font-bold'>Logout</button>
       ) : (
         <div className=''>
           <Emoji emoji='drooling_face' size={32} />

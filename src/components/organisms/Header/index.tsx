@@ -7,44 +7,83 @@ import BookmarkIcon from '@material-ui/icons/Bookmark';
 import SearchIcon from '@material-ui/icons/Search';
 import { Emoji } from 'emoji-mart';
 
-export const Header: React.FC = () => {
+export type HeaderProps = {
+  isSignedIn?: boolean;
+};
+
+export const Header: React.FC<HeaderProps> = ({ isSignedIn = false }) => {
   //   const user = useSelector(selectUser);
-  const user = { uid: '111111' };
-  const createLink = `${user.uid}/create-list`;
-  const searchLink = `/search-list`;
-  const bookmarkLink = `${user.uid}/bookmark-list`;
+  // const createLink = `${user.uid}/create-list`;
+  // const searchLink = `/search-list`;
+  // const bookmarkLink = `${user.uid}/bookmark-list`;
 
   return (
+    // <div className='bg-sub-color flex h-16 items-center justify-evenly'>
+    //   <Link href='/'>
+    //     <h3 className='text-2xl font-bold'>Food Invite</h3>
+    //   </Link>
+
+    //   {user.uid ? (
+    //     <Link href={createLink}>
+    //       <LibraryAddIcon fontSize='large' />
+    //     </Link>
+    //   ) : (
+    //     <div className=''>
+    //       <Emoji emoji='knife_fork_plate' size={32} />
+    //     </div>
+    //   )}
+
+    //   {user.uid ? (
+    //     <Link href={searchLink}>
+    //       <SearchIcon fontSize='large' />
+    //     </Link>
+    //   ) : (
+    //     <div className=''>
+    //       <Emoji emoji='male-cook' size={32} />
+    //     </div>
+    //   )}
+
+    //   {user.uid ? (
+    //     <Link href={bookmarkLink}>
+    //       <BookmarkIcon fontSize='large' />
+    //     </Link>
+    //   ) : (
+    //     <div className=''>
+    //       <Emoji emoji='yum' size={32} />
+    //     </div>
+    //   )}
+    // </div>
+
     <div className='bg-sub-color flex h-16 items-center justify-evenly'>
       <Link href='/'>
         <h3 className='text-2xl font-bold'>Food Invite</h3>
       </Link>
 
-      {user.uid ? (
-        <Link href={createLink}>
-          <LibraryAddIcon fontSize='large' />
-        </Link>
+      {isSignedIn ? (
+        // <Link href={createLink}>
+        <LibraryAddIcon fontSize='large' />
       ) : (
+        // </Link>
         <div className=''>
           <Emoji emoji='knife_fork_plate' size={32} />
         </div>
       )}
 
-      {user.uid ? (
-        <Link href={searchLink}>
-          <SearchIcon fontSize='large' />
-        </Link>
+      {isSignedIn ? (
+        // <Link href={searchLink}>
+        <SearchIcon fontSize='large' />
       ) : (
+        // </Link>
         <div className=''>
           <Emoji emoji='male-cook' size={32} />
         </div>
       )}
 
-      {user.uid ? (
-        <Link href={bookmarkLink}>
-          <BookmarkIcon fontSize='large' />
-        </Link>
+      {isSignedIn ? (
+        // <Link href={bookmarkLink}>
+        <BookmarkIcon fontSize='large' />
       ) : (
+        // </Link>
         <div className=''>
           <Emoji emoji='yum' size={32} />
         </div>

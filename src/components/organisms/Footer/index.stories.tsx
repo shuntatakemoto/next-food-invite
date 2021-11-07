@@ -1,11 +1,17 @@
 import { Story } from '@storybook/react';
 import React from 'react';
 
-import { Footer } from './index';
+import { Footer, FooterProps } from './index';
 
 export default {
   title: 'Components/Organisms/Footer',
   component: Footer,
 };
 
-export const user = () => <Footer />;
+const Template: Story<FooterProps> = (args) => <Footer {...args} />;
+
+export const LoggedIn = Template.bind({});
+LoggedIn.args = { isSignedIn: true };
+
+export const LoggedOut = Template.bind({});
+LoggedOut.args = {};

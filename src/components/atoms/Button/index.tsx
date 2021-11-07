@@ -1,12 +1,12 @@
 import React from 'react';
 
-export interface ButtonProps {
+export type ButtonProps = {
   primary?: boolean;
   backgroundColor?: string;
   size?: 'small' | 'medium' | 'large';
   label: string;
   onClick?: () => void;
-}
+};
 
 export const Button: React.FC<ButtonProps> = ({
   primary = false,
