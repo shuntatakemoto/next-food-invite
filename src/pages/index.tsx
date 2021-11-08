@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
-import { auth, provider } from '../infra/firebase';
+import { auth, provider } from '../libs/firebase';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import GitHubIcon from '@material-ui/icons/GitHub';
 

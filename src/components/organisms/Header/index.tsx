@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectUser } from '../../../features/slices/userSlices';
+import { selectUser } from '../../../store/user';
 import Link from 'next/link';
 import LibraryAddIcon from '@material-ui/icons/LibraryAdd';
 import BookmarkIcon from '@material-ui/icons/Bookmark';

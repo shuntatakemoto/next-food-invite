@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
 import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
-import { store } from '../app/store';
+import { store } from '../store';
 import { Header } from '../components/organisms/Header';
 import { Footer } from '../components/organisms/Footer';
 
