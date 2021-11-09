@@ -17,9 +17,9 @@ const MyPage: React.FC = () => {
   // }, [user.uid]);
 
   return (
-    <>
+    <main className='flex flex-col min-h-screen bg-main-color'>
       <Header isSignedIn={user.uid ? true : false} />
-      <div className='mt-5 flex-1'>
+      <div className='mt-5 '>
         <img
           src={user.photoUrl.replace('normal', '200x200')}
           alt='profile image'
@@ -29,7 +29,7 @@ const MyPage: React.FC = () => {
         {/* <WholeMyList /> */}
       </div>
       <Footer isSignedIn={user.uid ? true : false} />
-    </>
+    </main>
   );
 };
 

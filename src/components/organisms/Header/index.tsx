@@ -20,8 +20,9 @@ export const Header: React.FC<HeaderProps> = ({ isSignedIn }) => {
       </Link>
 
       {isSignedIn ? (
-        // <Link href={createLink}>
-        <LibraryAddIcon fontSize='large' />
+        <Link href='/users/create-list'>
+          <LibraryAddIcon fontSize='large' />
+        </Link>
       ) : (
         // </Link>
         <div className=''>
