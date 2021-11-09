@@ -3,7 +3,7 @@ import 'tailwindcss/tailwind.css';
 import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 import { store } from '../store';
-import { Auth } from '../libs/auth';
+import { Auth } from '../libs/Auth';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
