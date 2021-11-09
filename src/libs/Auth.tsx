@@ -3,15 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import { auth } from './firebase';
 import Router from 'next/router';
-
 import { selectUser } from '../store/user/index';
-
 import { login, logout } from '../store/user';
+import { useJudgeLogin } from '../hooks/useJudgeLogin';
 
 export const Auth = ({ children }: any) => {
   const router = useRouter();
   const user = useSelector(selectUser);
   console.log(user);
+
+  useJudgeLogin();
 
   //   useEffect(() => {
   //     if (router.pathname.match('/users(/S)?')) {

@@ -10,11 +10,11 @@ const MyPage: React.FC = () => {
   const user = useSelector(selectUser);
   const router = useRouter();
 
-  useEffect(() => {
-    if (user.uid == '') {
-      router.replace('/');
-    }
-  }, [user.uid]);
+  // useEffect(() => {
+  //   if (user.uid == '') {
+  //     router.replace('/');
+  //   }
+  // }, [user.uid]);
 
   return (
     <>
