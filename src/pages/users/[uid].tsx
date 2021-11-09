@@ -5,10 +5,13 @@ import { selectUser } from '../../store/user/index';
 import { Header } from '../../components/organisms/Header';
 import { Footer } from '../../components/organisms/Footer';
 import { useRouter } from 'next/router';
+import FullList from '../../components/organisms/FullList';
 
 const MyPage: React.FC = () => {
   const user = useSelector(selectUser);
   const router = useRouter();
+  const { uid } = router.query;
+  console.log('uid test', uid, typeof uid);
 
   // useEffect(() => {
   //   if (user.uid == '') {
@@ -26,7 +29,7 @@ const MyPage: React.FC = () => {
           className='w-40 rounded-3xl'
         />
         <p className='text-2xl font-bold'>{user.displayName}</p>
-        {/* <WholeMyList /> */}
+        <FullList />
       </div>
       <Footer isSignedIn={user.uid ? true : false} />
     </main>
