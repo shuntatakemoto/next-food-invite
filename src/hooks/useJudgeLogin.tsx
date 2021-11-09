@@ -11,7 +11,7 @@ export const useJudgeLogin = () => {
   useEffect(() => {
     if (user.uid) {
       console.log('呼ばれたよ−２');
-      router.replace('/users/mypage');
+      router.replace(`/users/${user.uid}`);
     }
   }, [user.uid]);
 
