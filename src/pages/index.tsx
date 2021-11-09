@@ -10,10 +10,10 @@ import { selectUser } from '../store/user/index';
 import { Footer } from '../components/organisms/Footer';
 import { Header } from '../components/organisms/Header';
 import router from 'next/router';
-import { judgeLogin } from '../hooks/judgeLogin';
+import { useJudgeLogin } from '../hooks/useJudgeLogin';
 
 const Home: NextPage = () => {
-  judgeLogin();
+  useJudgeLogin();
   const user = useSelector(selectUser);
 
   const signInTwitter = async () => {
