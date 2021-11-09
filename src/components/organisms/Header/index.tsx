@@ -11,7 +11,6 @@ export type HeaderProps = {
   isSignedIn?: boolean;
 };
 
-// export const Header: React.FC<HeaderProps> = ({ isSignedIn = false }) => {
 export const Header: React.FC<HeaderProps> = ({ isSignedIn }) => {
   return (
     <div className='bg-sub-color flex h-16 items-center justify-evenly'>
@@ -24,30 +23,23 @@ export const Header: React.FC<HeaderProps> = ({ isSignedIn }) => {
           <LibraryAddIcon fontSize='large' />
         </Link>
       ) : (
-        // </Link>
-        <div className=''>
-          <Emoji emoji='knife_fork_plate' size={32} />
-        </div>
+        <Emoji emoji='knife_fork_plate' size={32} />
       )}
 
       {isSignedIn ? (
-        // <Link href={searchLink}>
-        <SearchIcon fontSize='large' />
+        <Link href='/search'>
+          <SearchIcon fontSize='large' />
+        </Link>
       ) : (
-        // </Link>
-        <div className=''>
-          <Emoji emoji='male-cook' size={32} />
-        </div>
+        <Emoji emoji='male-cook' size={32} />
       )}
 
       {isSignedIn ? (
-        // <Link href={bookmarkLink}>
-        <BookmarkIcon fontSize='large' />
+        <Link href='bookmark'>
+          <BookmarkIcon fontSize='large' />
+        </Link>
       ) : (
-        // </Link>
-        <div className=''>
-          <Emoji emoji='yum' size={32} />
-        </div>
+        <Emoji emoji='yum' size={32} />
       )}
     </div>
   );
