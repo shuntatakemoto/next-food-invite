@@ -30,21 +30,22 @@ const WholePost: React.FC<PROPS> = (props) => {
   return (
     <div className=' rounded-lg shadow-xl overflow-hidden h-48 xl:h-60 m-4 xl:m-6'>
       <Link
-        href={`${uid}/${props.postId}`}
+        href={`/users/${uid}/lists/${props.postId}`}
         // onClick={() => {
         //   dispatch(getPostId(props.postId));
         //   dispatch(getListName(props.listname));
         //   dispatch(getEmojiName(props.emojiname));
         // }}
       >
-        <>
+        <div>
           <div className='h-36 xl:h-48 grid justify-items-center items-center bg-gray-200'>
             <Emoji emoji={newEmojiName} size={64} set='twitter' />
           </div>
           <div className='text-center h-12 xl:h-12 grid justify-items-center items-center bg-gray-200'>
             <p className='text-base'>{props.listname}</p>
+            <p className='text-base'>{props.postId}</p>
           </div>
-        </>
+        </div>
       </Link>
     </div>
   );

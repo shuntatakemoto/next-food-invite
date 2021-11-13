@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { selectUser } from '../../store/user/index';
+import { selectUser } from '../../../store/user/index';
 // import WholeMyList from "../organisms/WholeMyList";
-import { Header } from '../../components/organisms/Header';
-import { Footer } from '../../components/organisms/Footer';
+import { Header } from '../../../components/organisms/Header';
+import { Footer } from '../../../components/organisms/Footer';
 import { useRouter } from 'next/router';
-import FullList from '../../components/organisms/FullList';
+import FullList from '../../../components/organisms/FullList';
 
 const MyPage: React.FC = () => {
   const user = useSelector(selectUser);
