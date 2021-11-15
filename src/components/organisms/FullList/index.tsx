@@ -37,7 +37,7 @@ const FullList: React.FC = () => {
         unSub();
       };
     }
-  }, []);
+  }, [uid]);
 
   return (
     <div>

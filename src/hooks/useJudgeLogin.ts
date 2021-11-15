@@ -4,26 +4,22 @@ import { useRouter } from 'next/router';
 import { selectUser } from '../store/user/index';
 
 export const useJudgeLogin = () => {
-  console.log('呼ばれたよ−１');
   const user = useSelector(selectUser);
   const router = useRouter();
 
   useEffect(() => {
-    if (user.uid) {
-      console.log('呼ばれたよ−２');
+    const { uid, postId } = router.query;
+    console.log('uid-test', uid, 'postId-test', postId);
+
+    if (user.uid && ((uid || postId) == '' || (uid || postId) == undefined)) {
+      console.log('uid-test2', uid, 'postId-test2', postId);
       router.replace(`/users/${user.uid}`);
     }
-  }, [user.uid]);
 
-  useEffect(() => {
-    console.log('呼ばれたよ−３');
-    if (user.uid == undefined) {
-      console.log('呼ばれたよ−４');
-      router.replace('/');
-    }
-    if (user.uid == '') {
-      console.log('呼ばれたよ−４');
-      router.replace('/');
-    }
+    //ログインしてない時はログインページに遷移させる
+    // if (!user.uid) {
+    //   console.log("user.uid == '')");
+    //   router.replace('/');
+    // }
   }, [user.uid]);
 };
