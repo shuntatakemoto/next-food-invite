@@ -1,17 +1,13 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../../store/user/index';
-// import WholeMyList from "../organisms/WholeMyList";
 import { Header } from '../../../components/organisms/Header';
 import { Footer } from '../../../components/organisms/Footer';
-import { useRouter } from 'next/router';
 import FullList from '../../../components/organisms/FullList';
+import { Profile } from '../../../components/molecules/Profile';
 
 const MyPage: React.FC = () => {
   const user = useSelector(selectUser);
-  const router = useRouter();
-  const { uid } = router.query;
-  console.log('uid test', uid, typeof uid);
 
   // useEffect(() => {
   //   if (user.uid == '') {
@@ -22,15 +18,8 @@ const MyPage: React.FC = () => {
   return (
     <main className='flex flex-col min-h-screen bg-main-color'>
       <Header isSignedIn={user.uid ? true : false} />
-      <div className='mt-5 '>
-        <img
-          src={user.photoUrl.replace('normal', '200x200')}
-          alt='profile image'
-          className='w-40 rounded-3xl'
-        />
-        <p className='text-2xl font-bold'>{user.displayName}</p>
-        <FullList />
-      </div>
+      <Profile photoUrl={user.photoUrl} displayName={user.displayName} />
+      <FullList />
       <Footer isSignedIn={user.uid ? true : false} />
     </main>
   );
