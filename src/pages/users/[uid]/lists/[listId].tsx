@@ -10,8 +10,8 @@ import { useRouter } from 'next/router';
 const MyPage: React.FC = () => {
   const user = useSelector(selectUser);
   const router = useRouter();
-  const { uid, postId } = router.query;
-  console.log('uid test', uid, postId);
+  const { uid, listId } = router.query;
+  console.log('uid test', uid, listId);
 
   // useEffect(() => {
   //   if (user.uid == '') {

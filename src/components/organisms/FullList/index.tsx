@@ -48,7 +48,7 @@ const FullList: React.FC = () => {
             {posts.map((post) => (
               <FullPost
                 key={post.id}
-                postId={post.id}
+                listId={post.id}
                 // avatar={post.avatar}
                 listname={post.listname}
                 timestamp={post.timestamp}

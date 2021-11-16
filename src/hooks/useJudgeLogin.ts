@@ -8,11 +8,11 @@ export const useJudgeLogin = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const { uid, postId } = router.query;
-    console.log('uid-test', uid, 'postId-test', postId);
+    const { uid, listId } = router.query;
+    console.log('uid-test', uid, 'listId-test', listId);
 
-    if (user.uid && ((uid || postId) == '' || (uid || postId) == undefined)) {
-      console.log('uid-test2', uid, 'postId-test2', postId);
+    if (user.uid && ((uid || listId) == '' || (uid || listId) == undefined)) {
+      console.log('uid-test2', uid, 'listId-test2', listId);
       router.replace(`/users/${user.uid}`);
     }
 
