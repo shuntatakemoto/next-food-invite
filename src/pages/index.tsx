@@ -30,7 +30,7 @@ const Home: NextPage = () => {
       <main className='text-center bg-main-color'>
         <p className='text-5xl p-10 font-bold'>Food Invite</p>
         <p className='m-5'>サービスを利用するにはTwitterでログインが必要です。</p>
-        <Button primary={true} label='Sign In with Twitter' onClick={signInTwitter} />
+        <Button label='Sign In with Twitter' onClick={signInTwitter} />
         <p className='text-2xl p-5 mt-5'>このアプリは何？</p>
         <p>・知り合いをご飯に誘うハードルを下げること </p>
         <p>・地元民がお勧めする飲食店を知ること</p>
@@ -62,7 +62,7 @@ const Home: NextPage = () => {
         </div>
         <p className='mt-10 mb-5'>ソースコード⬇︎</p>
         <a href='https://github.com/shuntatakemoto/next-food-invite'>
-          <Button primary={true} label='Githubを開く' />
+          <Button label='Githubを開く' />
         </a>
         <p className='mt-10'>
           作成者:

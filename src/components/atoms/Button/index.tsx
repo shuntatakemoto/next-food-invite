@@ -2,6 +2,7 @@ import React from 'react';
 
 export type ButtonProps = {
   primary?: boolean;
+  color?: string;
   backgroundColor?: string;
   size?: 'small' | 'medium' | 'large';
   label: string;
@@ -25,11 +26,13 @@ export const Button: React.FC<ButtonProps> = ({
       ? 'py-3 px-6 text-base'
       : '';
   return primary ? (
-    <div>
-      <button type='button' className={` bg-sub-color ${baseButton} ${sizeMode}`} {...props}>
-        {label}
-      </button>
-    </div>
+    <button
+      type='button'
+      className={`  text-white bg-red-700 ${baseButton} ${sizeMode}`}
+      {...props}
+    >
+      {label}
+    </button>
   ) : (
     <button
       type='button'
