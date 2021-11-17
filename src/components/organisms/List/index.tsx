@@ -65,7 +65,7 @@ export const List: React.FC = (props) => {
       'https://twitter.com/messages/compose?recipient_id=' +
         post.twitterid +
         '&text=(店名を入力)に一緒に行きたいです for Food Invite\n ' +
-        router.pathname,
+        router.asPath,
     );
   };
 
