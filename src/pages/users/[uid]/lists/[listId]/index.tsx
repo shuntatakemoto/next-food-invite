@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { selectUser } from '../../../../store/user';
-import { Header } from '../../../../components/organisms/Header';
-import { Footer } from '../../../../components/organisms/Footer';
+import { selectUser } from '../../../../../store/user';
+import { Header } from '../../../../../components/organisms/Header';
+import { Footer } from '../../../../../components/organisms/Footer';
 import { useRouter } from 'next/router';
-import { List } from '../../../../components/organisms/List';
+import { List } from '../../../../../components/organisms/List';
 
-const MyPage: React.FC = () => {
+const ListPage: React.FC = () => {
   const user = useSelector(selectUser);
   const router = useRouter();
   const { uid, listId } = router.query;
@@ -26,4 +26,4 @@ const MyPage: React.FC = () => {
     </main>
   );
 };
-export default MyPage;
+export default ListPage;
