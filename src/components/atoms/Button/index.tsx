@@ -28,7 +28,7 @@ export const Button: React.FC<ButtonProps> = ({
   return primary ? (
     <button
       type='button'
-      className={`  text-white bg-red-700 ${baseButton} ${sizeMode}`}
+      className={`w-48 font-bold py-2 px-5 text-white bg-red-700 ${baseButton} ${sizeMode}`}
       {...props}
     >
       {label}
@@ -36,7 +36,7 @@ export const Button: React.FC<ButtonProps> = ({
   ) : (
     <button
       type='button'
-      className={`text-gray-600 bg-transparent shadow-inner ${baseButton} ${sizeMode}`}
+      className={` w-48 font-bold py-2 px-5 text-gray-600 bg-transparent shadow-inner ${baseButton} ${sizeMode}`}
       style={{ backgroundColor }}
       {...props}
     >

@@ -14,18 +14,24 @@ export const List: React.FC = (props) => {
   const router = useRouter();
   const { uid, listId }: any = router.query;
 
-  // const [post, setPost] = useState([
-  //   {
-  //     userid: "",
-  //     avatar: "",
-  //     listname: "",
-  //     username: "",
-  //     timestamp: null,
-  //     emojiname: "",
-  //   },
-  // ]);
+  type ListsProps = {
+    userid?: string;
+    avatar?: string;
+    listname?: string;
+    username?: string;
+    timestamp?: any;
+    emojiname?: string;
+    twitterid?: string;
+  };
 
-  const [post, setPost] = useState<any>('');
+  const [post, setPost] = useState<ListsProps>({
+    userid: '',
+    avatar: '',
+    listname: '',
+    username: '',
+    timestamp: null,
+    emojiname: '',
+  });
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -33,7 +39,7 @@ export const List: React.FC = (props) => {
       db.collection(uid)
         .doc(listId)
         .get()
-        .then((doc) => setPost(doc.data()));
+        .then((doc: any) => setPost(doc.data()));
     }
   }, [uid]);
 
@@ -73,18 +79,22 @@ export const List: React.FC = (props) => {
         <h3 className='text-3xl text-center mb-5 '>{post.listname}</h3>
 
         <div className='text-center '>
-          <div>{user.uid && <Button label='追加する' onClick={addLink} />}</div>
-          <div>{user.uid && <Button label='シェアする' onClick={() => setShow(true)} />}</div>
-          <div>
+          <div className='mb-2'>{user.uid && <Button label='追加する' onClick={addLink} />}</div>
+          <div className='mb-2'>
+            {user.uid && <Button label='シェアする' onClick={() => setShow(true)} />}
+          </div>
+          <div className='mb-2'>
             <Button label='一緒に行きたい' onClick={DmLink} />
+          </div>
+          <div className=' mb-4'>
+            {user.uid && (
+              <Button onClick={deleteList} label='このリストを削除する' primary={true} />
+            )}
           </div>
         </div>
       </div>
       {/* <Modal show={show} setShow={setShow} content={post.listname} /> */}
       {/* <MyList /> */}
-      <div className='text-center mb-6'>
-        {user.uid && <Button onClick={deleteList} label='このリストを削除する' primary={true} />}
-      </div>
     </div>
   );
 };
