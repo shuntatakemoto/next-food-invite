@@ -1,25 +1,28 @@
 import React, { useState, useEffect } from 'react';
-// import MyList from "../organisms/MyList";
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../../store/user';
 import { Emoji } from 'emoji-mart';
 import { Button } from '../../atoms/Button';
 import { db } from '../../../libs/firebase';
-// import Modal from '../organisms/Modal';
 import { useRouter } from 'next/router';
 import { SubProfile } from '../../molecules/SubProfile';
+import Modal from 'react-modal';
+import { Share } from '../../molecules/Share';
+
+Modal.setAppElement('#__next');
 
 export const List: React.FC = (props) => {
   const user = useSelector(selectUser);
   const router = useRouter();
   const { uid, listId }: any = router.query;
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   type ListsProps = {
-    userid?: string;
+    userid: string;
     avatar?: string;
-    listname?: string;
-    username?: string;
-    timestamp?: any;
+    listname: string;
+    username: string;
+    timestamp: any;
     emojiname?: string;
     twitterid?: string;
   };
@@ -32,7 +35,18 @@ export const List: React.FC = (props) => {
     timestamp: null,
     emojiname: '',
   });
-  const [show, setShow] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const afterOpenModal = () => {
+    // モーダルが開いた後の処理
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     if (uid && listId) {
@@ -81,7 +95,39 @@ export const List: React.FC = (props) => {
         <div className='text-center '>
           <div className='mb-2'>{user.uid && <Button label='追加する' onClick={addLink} />}</div>
           <div className='mb-2'>
-            {user.uid && <Button label='シェアする' onClick={() => setShow(true)} />}
+            {user.uid && <Button label='シェアする' onClick={openModal} />}
+            <Modal
+              isOpen={modalIsOpen}
+              onAfterOpen={afterOpenModal}
+              onRequestClose={closeModal}
+              style={{
+                overlay: {
+                  position: 'fixed',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  backgroundColor: 'rgba(255, 255, 255, 0.75)',
+                },
+                content: {
+                  position: 'absolute',
+                  top: '35%',
+                  left: '40px',
+                  right: '40px',
+                  bottom: '40%',
+                  border: '1px solid #ccc',
+                  background: '#fff',
+                  overflow: 'auto',
+                  WebkitOverflowScrolling: 'touch',
+                  borderRadius: '4px',
+                  outline: 'none',
+                  padding: '20px',
+                },
+              }}
+            >
+              <Share text={post.listname} url={router.asPath} onClick={closeModal} />
+              {/* <Button label='close' onClick={closeModal} /> */}
+            </Modal>
           </div>
           <div className='mb-2'>
             <Button label='一緒に行きたい' onClick={DmLink} />
@@ -93,8 +139,6 @@ export const List: React.FC = (props) => {
           </div>
         </div>
       </div>
-      {/* <Modal show={show} setShow={setShow} content={post.listname} /> */}
-      {/* <MyList /> */}
     </div>
   );
 };
