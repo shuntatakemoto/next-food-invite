@@ -1,18 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 import { Emoji } from 'emoji-mart';
-import { selectUser } from '../../../store/user';
 import { useRouter } from 'next/router';
 
-interface PROPS {
+type FullPostProps = {
   listId: string;
   listname: string;
   username: string;
   timestamp: any;
   emojiname: string;
-}
+};
 
-const WholePost: React.FC<PROPS> = (props) => {
+const WholePost: React.FC<FullPostProps> = (props) => {
   const router = useRouter();
   const { uid }: any = router.query;
   const emojiName = props.emojiname;

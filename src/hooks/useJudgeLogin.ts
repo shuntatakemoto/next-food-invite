@@ -9,10 +9,8 @@ export const useJudgeLogin = () => {
 
   useEffect(() => {
     const { uid, listId } = router.query;
-    console.log('uid-test', uid, 'listId-test', listId);
 
     if (user.uid && ((uid || listId) == '' || (uid || listId) == undefined)) {
-      console.log('uid-test2', uid, 'listId-test2', listId);
       router.replace(`/users/${user.uid}`);
     }
 

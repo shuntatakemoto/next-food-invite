@@ -10,7 +10,6 @@ const ListPage: React.FC = () => {
   const user = useSelector(selectUser);
   const router = useRouter();
   const { uid, listId } = router.query;
-  console.log('uid test', uid, listId);
 
   // useEffect(() => {
   //   if (user.uid == '') {

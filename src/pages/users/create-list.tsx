@@ -20,7 +20,6 @@ const CreateList: React.FC = () => {
   const createList = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     db.collection(user.uid).add({
-      // db.collection('users').add({
       avatar: user.photoUrl,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       username: user.displayName,

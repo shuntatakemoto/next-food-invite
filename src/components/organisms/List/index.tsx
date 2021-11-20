@@ -9,6 +9,16 @@ import { SubProfile } from '../../molecules/SubProfile';
 import Modal from 'react-modal';
 import { Share } from '../../molecules/Share';
 
+type ListsProps = {
+  userid: string;
+  avatar?: string;
+  listname: string;
+  username: string;
+  timestamp: any;
+  emojiname?: string;
+  twitterid?: string;
+};
+
 Modal.setAppElement('#__next');
 
 export const List: React.FC = (props) => {
@@ -16,16 +26,6 @@ export const List: React.FC = (props) => {
   const router = useRouter();
   const { uid, listId }: any = router.query;
   const [modalIsOpen, setIsOpen] = useState(false);
-
-  type ListsProps = {
-    userid: string;
-    avatar?: string;
-    listname: string;
-    username: string;
-    timestamp: any;
-    emojiname?: string;
-    twitterid?: string;
-  };
 
   const [post, setPost] = useState<ListsProps>({
     userid: '',

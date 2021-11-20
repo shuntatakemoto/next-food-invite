@@ -9,15 +9,15 @@ import { useRouter } from 'next/router';
 import { Footer } from '../../../../../components/organisms/Footer';
 import { Header } from '../../../../../components/organisms/Header';
 
-interface PROPS {
+type AddListProps = {
   postId: string;
   avatar: string;
   image: string;
   username: string;
   timestamp: any;
-}
+};
 
-const AddList: React.FC<PROPS> = (props) => {
+const AddList: React.FC<AddListProps> = (props) => {
   const user = useSelector(selectUser);
   const router = useRouter();
   const { uid, listId }: any = router.query;
