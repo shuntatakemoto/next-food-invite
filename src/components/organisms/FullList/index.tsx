@@ -1,43 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { db } from '../../../libs/firebase';
+import React from 'react';
 import FullPost from '../../molecules/FullPost';
-import { useRouter } from 'next/router';
+import { useFullList } from '../../../hooks/useFullList';
+
+// type PostsProps = {
+//   id: string;
+//   listname: string;
+//   username: string;
+//   timestamp: any;
+//   emojiname: string;
+// };
 
 const FullList: React.FC = () => {
-  const router = useRouter();
-  const { uid }: any = router.query;
-  const [posts, setPosts] = useState([
-    {
-      id: '',
-      listname: '',
-      username: '',
-      timestamp: null,
-      emojiname: '',
-    },
-  ]);
-
-  useEffect(() => {
-    if (uid) {
-      const unSub = db
-        .collection(uid)
-        .orderBy('timestamp', 'desc')
-        .onSnapshot((snapshot: { docs: any[] }) =>
-          setPosts(
-            snapshot.docs.map((doc) => ({
-              id: doc.id,
-              avatar: doc.data().avatar,
-              listname: doc.data().listname,
-              timestamp: doc.data().timestamp,
-              username: doc.data().username,
-              emojiname: doc.data().emojiname,
-            })),
-          ),
-        );
-      return () => {
-        unSub();
-      };
-    }
-  }, [uid]);
+  const { posts } = useFullList();
 
   return (
     <div>
@@ -45,11 +19,10 @@ const FullList: React.FC = () => {
       <div className='grid grid-cols-2 xl:grid-cols-4 text-center'>
         {posts[0]?.id && (
           <>
-            {posts.map((post) => (
+            {posts.map((post: any) => (
               <FullPost
                 key={post.id}
                 listId={post.id}
-                // avatar={post.avatar}
                 listname={post.listname}
                 timestamp={post.timestamp}
                 username={post.username}

@@ -8,81 +8,23 @@ import { useRouter } from 'next/router';
 import { SubProfile } from '../../molecules/SubProfile';
 import Modal from 'react-modal';
 import { Share } from '../../molecules/Share';
-
-type ListsProps = {
-  userid: string;
-  avatar?: string;
-  listname: string;
-  username: string;
-  timestamp: any;
-  emojiname?: string;
-  twitterid?: string;
-};
+import { useList } from '../../../hooks/useList';
 
 Modal.setAppElement('#__next');
 
-export const List: React.FC = (props) => {
-  const user = useSelector(selectUser);
-  const router = useRouter();
-  const { uid, listId }: any = router.query;
-  const [modalIsOpen, setIsOpen] = useState(false);
-
-  const [post, setPost] = useState<ListsProps>({
-    userid: '',
-    avatar: '',
-    listname: '',
-    username: '',
-    timestamp: null,
-    emojiname: '',
-  });
-
-  const openModal = () => {
-    setIsOpen(true);
-  };
-
-  const afterOpenModal = () => {
-    // モーダルが開いた後の処理
-  };
-
-  const closeModal = () => {
-    setIsOpen(false);
-  };
-
-  useEffect(() => {
-    if (uid && listId) {
-      db.collection(uid)
-        .doc(listId)
-        .get()
-        .then((doc: any) => setPost(doc.data()));
-    }
-  }, [uid]);
-
-  const deleteList = () => {
-    db.collection(uid)
-      .doc(listId)
-      .delete()
-      .then(() => {
-        console.log('Document successfully deleted!');
-      })
-      .catch((error) => {
-        console.error('Error removing document: ', error);
-      });
-    router.replace('/');
-  };
-
-  const addLink = () => {
-    router.replace(`/users/${uid}/lists/${listId}/add-list`);
-  };
-
-  const DmLink = () => {
-    router.replace(
-      'https://twitter.com/messages/compose?recipient_id=' +
-        post.twitterid +
-        '&text=(店名を入力)に一緒に行きたいです for Food Invite\n ' +
-        'https://food-invite.vercel.app/' +
-        router.asPath,
-    );
-  };
+export const List: React.FC = () => {
+  const {
+    user,
+    post,
+    addLink,
+    openModal,
+    modalIsOpen,
+    afterOpenModal,
+    closeModal,
+    DmLink,
+    deleteList,
+    shareUrl,
+  } = useList();
 
   return (
     <div className='pt-5 '>
@@ -126,12 +68,7 @@ export const List: React.FC = (props) => {
                 },
               }}
             >
-              <Share
-                text={`${post.listname}\n`}
-                url={`https://food-invite.vercel.app/${router.asPath}`}
-                onClick={closeModal}
-              />
-              {/* <Button label='close' onClick={closeModal} /> */}
+              <Share text={`${post.listname}\n`} url={shareUrl} onClick={closeModal} />
             </Modal>
           </div>
           <div className='mb-2'>
