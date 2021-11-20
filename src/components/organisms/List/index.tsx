@@ -79,6 +79,7 @@ export const List: React.FC = (props) => {
       'https://twitter.com/messages/compose?recipient_id=' +
         post.twitterid +
         '&text=(店名を入力)に一緒に行きたいです for Food Invite\n ' +
+        'https://food-invite.vercel.app/' +
         router.asPath,
     );
   };
@@ -125,7 +126,11 @@ export const List: React.FC = (props) => {
                 },
               }}
             >
-              <Share text={post.listname} url={router.asPath} onClick={closeModal} />
+              <Share
+                text={`${post.listname}\n`}
+                url={`https://food-invite.vercel.app/${router.asPath}`}
+                onClick={closeModal}
+              />
               {/* <Button label='close' onClick={closeModal} /> */}
             </Modal>
           </div>
