@@ -1,37 +1,13 @@
-import React, { useState } from 'react';
-import firebase from 'firebase/app';
-import { db } from '../../libs/firebase';
-import { useSelector } from 'react-redux';
-import { selectUser } from '../../store/user';
+import React from 'react';
 import 'emoji-mart/css/emoji-mart.css';
 import { Picker } from 'emoji-mart';
 import TextField from '@material-ui/core/TextField';
-import { useRouter } from 'next/router';
 import { Footer } from '../../components/organisms/Footer';
 import { Header } from '../../components/organisms/Header';
+import { useCreateList } from '../../hooks/useCreateList';
 
 const CreateList: React.FC = () => {
-  const user = useSelector(selectUser);
-  const router = useRouter();
-  const [listName, setListName] = useState('');
-  const [emojiName, setEmojiName] = useState('');
-  const newEmojiName = emojiName.replace(/\"/g, '');
-
-  const createList = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    db.collection(user.uid).add({
-      avatar: user.photoUrl,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      username: user.displayName,
-      listname: listName,
-      emojiname: newEmojiName,
-      userid: user.uid,
-      twitterid: user.twitterUid,
-    });
-    setListName('');
-    setEmojiName('');
-    router.replace('/');
-  };
+  const { createList, setListName, setEmojiName, user, listName } = useCreateList();
 
   return (
     <main className='flex flex-col min-h-screen bg-main-color'>
@@ -42,7 +18,6 @@ const CreateList: React.FC = () => {
           label='リスト名'
           placeholder='行きたい飲食店リスト'
           multiline
-          //   fullWidth
           margin='normal'
           value={listName}
           className='pr-5 pb-5 xl:w-1/4'

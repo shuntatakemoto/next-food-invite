@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
-import firebase from 'firebase/app';
-import { storage, db } from '../../../../../libs/firebase';
-import { useSelector } from 'react-redux';
-import { selectUser } from '../../../../../store/user';
+import React from 'react';
 import AddPhotoIcon from '@material-ui/icons/AddAPhoto';
 import TextField from '@material-ui/core/TextField';
-import { useRouter } from 'next/router';
 import { Footer } from '../../../../../components/organisms/Footer';
 import { Header } from '../../../../../components/organisms/Header';
+import { useAddList } from '../../../../../hooks/useAddList';
 
 type AddListProps = {
   postId: string;
@@ -17,74 +13,20 @@ type AddListProps = {
   timestamp: any;
 };
 
-const AddList: React.FC<AddListProps> = (props) => {
-  const user = useSelector(selectUser);
-  const router = useRouter();
-  const { uid, listId }: any = router.query;
-  const [uploadImage, setUploadImage] = useState<File | null>(null);
-  const [name, setName] = useState('');
-  const [memo, setMemo] = useState('');
-  const [restaurantUrl, setRestaurantUrl] = useState('');
-  const [fileUrl, setFileUrl] = useState<any>(null);
-
-  const onChangeImageHandler = (e: any) => {
-    if (e.target.files![0]) {
-      setUploadImage(e.target.files![0]);
-      const imageFile = e.target.files[0];
-      const imageUrl = URL.createObjectURL(imageFile);
-      setFileUrl(imageUrl);
-      e.target.value = '';
-    }
-  };
-
-  const addList = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (uploadImage) {
-      const S = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-      const N = 16;
-      const randomChar = Array.from(crypto.getRandomValues(new Uint32Array(N)))
-        .map((n) => S[n % S.length])
-        .join('');
-      const fileName = randomChar + '_' + uploadImage.name;
-      const uploadTweetImg = storage.ref(`${uid}/${fileName}`).put(uploadImage);
-      uploadTweetImg.on(
-        firebase.storage.TaskEvent.STATE_CHANGED,
-        () => {},
-        (err) => {
-          alert(err.message);
-        },
-        async () => {
-          await storage
-            .ref(uid)
-            .child(fileName)
-            .getDownloadURL()
-            .then(async (url) => {
-              db.collection(uid).doc(listId).collection('restaurant').add({
-                imageurl: url,
-                name: name,
-                memo: memo,
-                url: restaurantUrl,
-                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                username: user.displayName,
-              });
-            });
-        },
-      );
-    } else {
-      db.collection(uid).doc(listId).collection('restaurant').add({
-        name: name,
-        memo: memo,
-        url: restaurantUrl,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        username: user.displayName,
-      });
-    }
-    setUploadImage(null);
-    setName('');
-    setMemo('');
-    setRestaurantUrl('');
-    router.replace(`/users/${uid}/lists/${listId}`);
-  };
+const AddList: React.FC<AddListProps> = () => {
+  const {
+    user,
+    addList,
+    setName,
+    uploadImage,
+    onChangeImageHandler,
+    fileUrl,
+    memo,
+    setMemo,
+    restaurantUrl,
+    setRestaurantUrl,
+    name,
+  } = useAddList();
 
   return (
     <main className='flex flex-col min-h-screen bg-main-color'>
