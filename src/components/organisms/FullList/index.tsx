@@ -1,6 +1,7 @@
 import React from 'react';
 import FullPost from '../../molecules/FullPost';
 import { useFullList } from '../../../hooks/useFullList';
+import { Headline } from '../../atoms/Headline';
 
 // type PostsProps = {
 //   id: string;
@@ -15,7 +16,10 @@ const FullList: React.FC = () => {
 
   return (
     <div>
-      <p className='text-center text-2xl py-5 font-bold'>マイリスト</p>
+      <div className='py-5'>
+        <Headline headline='マイリスト' />
+      </div>
+
       <div className='grid grid-cols-2 xl:grid-cols-4 text-center'>
         {posts[0]?.id && (
           <>
