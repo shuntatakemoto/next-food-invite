@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../../store/user/index';
 import { Header } from '../../../components/organisms/Header';
@@ -8,12 +8,6 @@ import { Profile } from '../../../components/molecules/Profile';
 
 const MyPage: React.FC = () => {
   const user = useSelector(selectUser);
-
-  // useEffect(() => {
-  //   if (user.uid == '') {
-  //     router.replace('/');
-  //   }
-  // }, [user.uid]);
 
   return (
     <main className='flex flex-col min-h-screen bg-main-color'>
