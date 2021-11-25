@@ -7,7 +7,7 @@ import { Headline } from '../../atoms/Headline';
 //   id: string;
 //   listname: string;
 //   username: string;
-//   timestamp: any;
+//   timestamp: firebase.firestore.FieldValue;
 //   emojiname: string;
 // };
 

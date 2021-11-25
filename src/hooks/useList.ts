@@ -3,13 +3,14 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../store/user';
 import { useRouter } from 'next/router';
 import { db } from '../libs/firebase';
+import firebase from 'firebase/app';
 
 type ListsProps = {
   userid: string;
   avatar?: string;
   listname: string;
   username: string;
-  timestamp: any;
+  timestamp: firebase.firestore.FieldValue;
   emojiname?: string;
   twitterid?: string;
 };
@@ -25,7 +26,7 @@ export const useList = () => {
     avatar: '',
     listname: '',
     username: '',
-    timestamp: null,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     emojiname: '',
   });
 

@@ -2,12 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import { Emoji } from 'emoji-mart';
 import { useRouter } from 'next/router';
+import firebase from 'firebase/app';
 
 type FullPostProps = {
   listId: string;
   listname: string;
   username: string;
-  timestamp: any;
+  timestamp: firebase.firestore.FieldValue;
   emojiname: string;
 };
 

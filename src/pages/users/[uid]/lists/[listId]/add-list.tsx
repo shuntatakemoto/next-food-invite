@@ -3,13 +3,14 @@ import AddPhotoIcon from '@material-ui/icons/AddAPhoto';
 import TextField from '@material-ui/core/TextField';
 import { useAddList } from '../../../../../hooks/useAddList';
 import { Headline } from '../../../../../components/atoms/Headline';
+import firebase from 'firebase/app';
 
 type AddListProps = {
   postId: string;
   avatar: string;
   image: string;
   username: string;
-  timestamp: any;
+  timestamp: firebase.firestore.FieldValue;
 };
 
 const AddList: React.FC<AddListProps> = () => {

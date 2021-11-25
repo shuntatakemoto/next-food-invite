@@ -1,11 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import firebase from 'firebase/app';
 
 type ListContentCardProps = {
   restaurantId: string;
   username: string;
-  timestamp: any;
+  timestamp: firebase.firestore.FieldValue;
   imageurl: string;
   memo?: string;
   url?: string;
