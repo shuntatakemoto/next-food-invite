@@ -1,8 +1,6 @@
 import React from 'react';
 import AddPhotoIcon from '@material-ui/icons/AddAPhoto';
 import TextField from '@material-ui/core/TextField';
-import { Footer } from '../../../../../components/organisms/Footer';
-import { Header } from '../../../../../components/organisms/Header';
 import { useAddList } from '../../../../../hooks/useAddList';
 import { Headline } from '../../../../../components/atoms/Headline';
 
@@ -30,8 +28,7 @@ const AddList: React.FC<AddListProps> = () => {
   } = useAddList();
 
   return (
-    <main className='flex flex-col min-h-screen bg-main-color'>
-      <Header isSignedIn={user.uid ? true : false} />
+    <main className='flex flex-col bg-main-color'>
       <Headline headline='店を追加' />
       <form onSubmit={addList} className='px-10 xl:w-1/4 flex-1'>
         <div>
@@ -96,7 +93,6 @@ const AddList: React.FC<AddListProps> = () => {
           </button>
         </div>
       </form>
-      <Footer isSignedIn={user.uid ? true : false} />
     </main>
   );
 };

@@ -2,8 +2,6 @@ import React from 'react';
 import 'emoji-mart/css/emoji-mart.css';
 import { Picker } from 'emoji-mart';
 import TextField from '@material-ui/core/TextField';
-import { Footer } from '../../components/organisms/Footer';
-import { Header } from '../../components/organisms/Header';
 import { useCreateList } from '../../hooks/useCreateList';
 import { Headline } from '../../components/atoms/Headline';
 
@@ -11,8 +9,7 @@ const CreateList: React.FC = () => {
   const { createList, setListName, setEmojiName, user, listName } = useCreateList();
 
   return (
-    <main className='flex flex-col min-h-screen bg-main-color'>
-      <Header isSignedIn={user.uid ? true : false} />
+    <main className='flex flex-col bg-main-color'>
       <Headline headline='リストを作成' />
       <form onSubmit={createList} className='pl-5 '>
         <TextField
@@ -39,7 +36,6 @@ const CreateList: React.FC = () => {
           </button>
         </div>
       </form>
-      <Footer isSignedIn={user.uid ? true : false} />
     </main>
   );
 };
