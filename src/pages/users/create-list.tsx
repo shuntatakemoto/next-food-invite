@@ -10,7 +10,9 @@ const CreateList: React.FC = () => {
 
   return (
     <main className='flex flex-col bg-main-color'>
-      <Headline headline='リストを作成' />
+      <div className='py-4'>
+        <Headline headline='リストを作成' />
+      </div>
       <form onSubmit={createList} className='pl-5 '>
         <TextField
           label='リスト名'

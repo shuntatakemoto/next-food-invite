@@ -30,7 +30,9 @@ const AddList: React.FC<AddListProps> = () => {
 
   return (
     <main className='flex flex-col bg-main-color'>
-      <Headline headline='店を追加' />
+      <div className='py-4'>
+        <Headline headline='店を追加' />
+      </div>
       <form onSubmit={addList} className='px-10 xl:w-1/4 flex-1'>
         <div>
           <TextField
