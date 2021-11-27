@@ -12,7 +12,7 @@ export const Bookmark: React.FC = () => {
           {posts.map((post: any) => (
             <FullPost
               key={post.id}
-              listId={post.id}
+              listId={post.listid}
               listname={post.listname}
               timestamp={post.timestamp}
               username={post.username}

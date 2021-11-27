@@ -19,6 +19,7 @@ export const List: React.FC = () => {
     afterOpenModal,
     closeModal,
     DmLink,
+    bookmark,
     deleteList,
     shareUrl,
   } = useList();
@@ -72,6 +73,10 @@ export const List: React.FC = () => {
           </div>
           <div className='mb-2'>
             <Button label='一緒に行きたい' onClick={DmLink} />
+          </div>
+          <div className='mb-2'>
+            <Button label='ブックマークする' onClick={bookmark} />
+            {/* <Button label='ブックマークから削除' onClick={bookmark} /> */}
           </div>
           <div className=' mb-4'>
             {user.uid && (

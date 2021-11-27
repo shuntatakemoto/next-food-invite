@@ -7,8 +7,10 @@ export const useBookmarkList = () => {
   const { uid }: any = router.query;
   const [posts, setPosts] = useState([
     {
+      avatar: '',
       id: '',
       listname: '',
+      listid: '',
       username: '',
       timestamp: null,
       emojiname: '',
@@ -24,7 +26,9 @@ export const useBookmarkList = () => {
           setPosts(
             snapshot.docs.map((doc) => ({
               id: doc.id,
+              avatar: doc.avatar,
               listname: doc.data().listname,
+              listid: doc.data().listid,
               timestamp: doc.data().timestamp,
               username: doc.data().username,
               emojiname: doc.data().emojiname,

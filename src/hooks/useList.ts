@@ -9,6 +9,7 @@ type ListsProps = {
   userid: string;
   avatar?: string;
   listname: string;
+  listid?: string;
   username: string;
   timestamp: firebase.firestore.FieldValue;
   emojiname?: string;
@@ -25,6 +26,7 @@ export const useList = () => {
     userid: '',
     avatar: '',
     listname: '',
+    listid: '',
     username: '',
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     emojiname: '',
@@ -78,6 +80,30 @@ export const useList = () => {
     );
   };
 
+  const bookmark = () => {
+    db.collection(`${user.uid}-bookmark`).add({
+      avatar: user.photoUrl,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      username: user.displayName,
+      listname: post.listname,
+      listid: listId,
+      emojiname: post.emojiname,
+      userid: user.uid,
+      twitterid: user.twitterUid,
+    });
+
+    // db.collection(user.uid).doc('bookmark').collection(listId).add({
+    //   avatar: user.photoUrl,
+    //   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    //   username: user.displayName,
+    //   listname: post.listname,
+    //   listid: listId,
+    //   emojiname: post.emojiname,
+    //   userid: user.uid,
+    //   twitterid: user.twitterUid,
+    // });
+  };
+
   const shareUrl = `https://food-invite.vercel.app${router.asPath}`;
 
   return {
@@ -90,6 +116,7 @@ export const useList = () => {
     deleteList,
     addLink,
     DmLink,
+    bookmark,
     shareUrl,
   };
 };
