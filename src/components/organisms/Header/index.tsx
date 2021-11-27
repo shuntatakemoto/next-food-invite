@@ -21,7 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ isSignedIn }) => {
       </Link>
 
       {isSignedIn ? (
-        <Link href='/users/create-list'>
+        <Link href='/users/[uid]/create-list' as={`/users/${uid}/create-list`}>
           <LibraryAddIcon fontSize='large' />
         </Link>
       ) : (

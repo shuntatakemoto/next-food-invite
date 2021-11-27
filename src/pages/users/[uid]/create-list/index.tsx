@@ -2,8 +2,8 @@ import React from 'react';
 import 'emoji-mart/css/emoji-mart.css';
 import { Picker } from 'emoji-mart';
 import TextField from '@material-ui/core/TextField';
-import { useCreateList } from '../../hooks/useCreateList';
-import { Headline } from '../../components/atoms/Headline';
+import { useCreateList } from '../../../../hooks/useCreateList';
+import { Headline } from '../../../../components/atoms/Headline';
 
 const CreateList: React.FC = () => {
   const { createList, setListName, setEmojiName, user, listName } = useCreateList();
