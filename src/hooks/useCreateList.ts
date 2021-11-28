@@ -15,7 +15,7 @@ export const useCreateList = () => {
 
   const createList = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    db.collection(user.uid).add({
+    db.collection('users').doc(user.uid).collection('lists').add({
       avatar: user.photoUrl,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       username: user.displayName,

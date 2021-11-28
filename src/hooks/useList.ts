@@ -46,7 +46,9 @@ export const useList = () => {
 
   useEffect(() => {
     if (uid && listId) {
-      db.collection(uid)
+      db.collection('users')
+        .doc(uid)
+        .collection('lists')
         .doc(listId)
         .get()
         .then((doc: any) => setPost(doc.data()));
@@ -54,7 +56,9 @@ export const useList = () => {
   }, [uid]);
 
   const deleteList = () => {
-    db.collection(uid)
+    db.collection('users')
+      .doc(uid)
+      .collection('lists')
       .doc(listId)
       .delete()
       .then(() => {
@@ -81,7 +85,7 @@ export const useList = () => {
   };
 
   const bookmark = () => {
-    db.collection(`${user.uid}-bookmark`).add({
+    db.collection('users').doc(user.uid).collection('bookmark').add({
       avatar: user.photoUrl,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       username: user.displayName,
@@ -91,17 +95,6 @@ export const useList = () => {
       userid: user.uid,
       twitterid: user.twitterUid,
     });
-
-    // db.collection(user.uid).doc('bookmark').collection(listId).add({
-    //   avatar: user.photoUrl,
-    //   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    //   username: user.displayName,
-    //   listname: post.listname,
-    //   listid: listId,
-    //   emojiname: post.emojiname,
-    //   userid: user.uid,
-    //   twitterid: user.twitterUid,
-    // });
   };
 
   const shareUrl = `https://food-invite.vercel.app${router.asPath}`;

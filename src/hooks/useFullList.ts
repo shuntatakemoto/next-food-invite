@@ -18,7 +18,10 @@ export const useFullList = () => {
   useEffect(() => {
     if (uid) {
       const unSub = db
-        .collection(uid)
+        .collection('users')
+        .doc(uid)
+        .collection('lists')
+        // .where('userid', '==', uid)
         .orderBy('timestamp', 'desc')
         .onSnapshot((snapshot: { docs: any[] }) =>
           setPosts(

@@ -12,7 +12,9 @@ export const useRestaurant = () => {
 
   useEffect(() => {
     if (uid && listId && restaurantId) {
-      db.collection(uid)
+      db.collection('users')
+        .doc(uid)
+        .collection('lists')
         .doc(listId)
         .collection('restaurant')
         .doc(restaurantId)
@@ -26,7 +28,9 @@ export const useRestaurant = () => {
   };
 
   const deleteItem = () => {
-    db.collection(uid)
+    db.collection('users')
+      .doc(uid)
+      .collection('lists')
       .doc(listId)
       .collection('restaurant')
       .doc(restaurantId)

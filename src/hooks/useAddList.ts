@@ -47,19 +47,24 @@ export const useAddList = () => {
             .child(fileName)
             .getDownloadURL()
             .then(async (url) => {
-              db.collection(uid).doc(listId).collection('restaurant').add({
-                imageurl: url,
-                name: name,
-                memo: memo,
-                url: restaurantUrl,
-                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                username: user.displayName,
-              });
+              db.collection('users')
+                .doc(uid)
+                .collection('lists')
+                .doc(listId)
+                .collection('restaurant')
+                .add({
+                  imageurl: url,
+                  name: name,
+                  memo: memo,
+                  url: restaurantUrl,
+                  timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                  username: user.displayName,
+                });
             });
         },
       );
     } else {
-      db.collection(uid).doc(listId).collection('restaurant').add({
+      db.collection('users').doc(uid).collection('lists').doc(listId).collection('restaurant').add({
         name: name,
         memo: memo,
         url: restaurantUrl,

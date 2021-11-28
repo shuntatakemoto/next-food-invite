@@ -20,7 +20,9 @@ export const useBookmarkList = () => {
   useEffect(() => {
     if (uid) {
       const unSub = db
-        .collection(`${uid}-bookmark`)
+        .collection('users')
+        .doc(uid)
+        .collection('bookmark')
         .orderBy('timestamp', 'desc')
         .onSnapshot((snapshot: { docs: any[] }) =>
           setPosts(

@@ -21,7 +21,9 @@ export const ListContent: React.FC = () => {
   useEffect(() => {
     if (uid && listId) {
       const unSub = db
-        .collection(uid)
+        .collection('users')
+        .doc(uid)
+        .collection('lists')
         .doc(listId)
         .collection('restaurant')
         .orderBy('timestamp', 'desc')
