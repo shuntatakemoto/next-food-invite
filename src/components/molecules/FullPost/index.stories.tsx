@@ -4,7 +4,7 @@ import React from 'react';
 import { FullPost, FullPostProps } from './index';
 
 export default {
-  title: 'Components/Organisms/FullPost',
+  title: 'Components/molecules/FullPost',
   component: FullPost,
 };
 

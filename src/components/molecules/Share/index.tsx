@@ -12,7 +12,7 @@ import { Button } from '../../atoms/Button';
 export type ShareProps = {
   text: string;
   url: string;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 export const Share: React.FC<ShareProps> = (props) => {
