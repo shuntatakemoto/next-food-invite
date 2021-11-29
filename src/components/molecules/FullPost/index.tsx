@@ -12,7 +12,7 @@ export type FullPostProps = {
   emojiname: string;
 };
 
-export const FullPost: React.FC<FullPostProps> = (props) => {
+const FullPost: React.FC<FullPostProps> = (props) => {
   const emojiName = props.emojiname;
 
   return (
@@ -30,3 +30,4 @@ export const FullPost: React.FC<FullPostProps> = (props) => {
     </div>
   );
 };
+export default FullPost;

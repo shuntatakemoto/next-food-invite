@@ -1,6 +1,6 @@
 import React from 'react';
 import { useBookmarkList } from '../../../hooks/useBookmarkList';
-import { FullPost } from '../../molecules/FullPost';
+import FullPost from '../../molecules/FullPost';
 
 export const Bookmark: React.FC = () => {
   const { uid, posts } = useBookmarkList();

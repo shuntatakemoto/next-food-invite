@@ -1,5 +1,5 @@
 import React from 'react';
-import { FullPost } from '../../molecules/FullPost';
+import FullPost from '../../molecules/FullPost';
 import { useFullList } from '../../../hooks/useFullList';
 import { Headline } from '../../atoms/Headline';
 

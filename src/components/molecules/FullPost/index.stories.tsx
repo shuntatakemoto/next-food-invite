@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 import React from 'react';
 
-import { FullPost, FullPostProps } from './index';
+import FullPost, { FullPostProps } from './index';
 
 export default {
   title: 'Components/molecules/FullPost',
