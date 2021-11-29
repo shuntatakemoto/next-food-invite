@@ -12,7 +12,7 @@ const Layout = ({ children }: LayoutProps) => {
   const user = useSelector(selectUser);
   return (
     <div className='flex flex-col min-h-screen bg-main-color'>
-      <Header isSignedIn={user.uid ? true : false} />
+      <Header isSignedIn={user.uid ? true : false} uid={user.uid} />
       <main>{children}</main>
       <Footer isSignedIn={user.uid ? true : false} />
     </div>

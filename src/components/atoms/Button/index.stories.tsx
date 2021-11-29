@@ -13,6 +13,11 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
+export const Default = Template.bind({});
+Default.args = {
+  label: 'Button',
+};
+
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
@@ -22,7 +27,7 @@ Primary.args = {
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'Button',
-  backgroundColor: 'red',
+  backgroundColor: '#EEE8AA',
 };
 
 export const Large = Template.bind({});

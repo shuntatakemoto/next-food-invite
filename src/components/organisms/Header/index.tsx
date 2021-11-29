@@ -8,11 +8,11 @@ import { useRouter } from 'next/router';
 
 export type HeaderProps = {
   isSignedIn?: boolean;
+  uid?: string;
 };
 
-export const Header: React.FC<HeaderProps> = ({ isSignedIn }) => {
+export const Header: React.FC<HeaderProps> = ({ isSignedIn, uid }) => {
   const router = useRouter();
-  const { uid } = router.query;
 
   return (
     <div className='bg-sub-color flex h-16 items-center justify-evenly'>
