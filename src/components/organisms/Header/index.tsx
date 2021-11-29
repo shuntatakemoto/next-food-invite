@@ -4,7 +4,6 @@ import LibraryAddIcon from '@material-ui/icons/LibraryAdd';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
 import SearchIcon from '@material-ui/icons/Search';
 import { Emoji } from 'emoji-mart';
-import { useRouter } from 'next/router';
 
 export type HeaderProps = {
   isSignedIn?: boolean;
@@ -12,8 +11,6 @@ export type HeaderProps = {
 };
 
 export const Header: React.FC<HeaderProps> = ({ isSignedIn, uid }) => {
-  const router = useRouter();
-
   return (
     <div className='bg-sub-color flex h-16 items-center justify-evenly'>
       <Link href='/'>

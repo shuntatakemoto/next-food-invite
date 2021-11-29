@@ -41,6 +41,7 @@ export const useFullList = () => {
   }, [uid]);
 
   return {
+    uid,
     posts,
   };
 };

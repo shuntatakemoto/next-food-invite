@@ -1,18 +1,10 @@
 import React from 'react';
-import FullPost from '../../molecules/FullPost';
+import { FullPost } from '../../molecules/FullPost';
 import { useFullList } from '../../../hooks/useFullList';
 import { Headline } from '../../atoms/Headline';
 
-// type PostsProps = {
-//   id: string;
-//   listname: string;
-//   username: string;
-//   timestamp: firebase.firestore.FieldValue;
-//   emojiname: string;
-// };
-
 const FullList: React.FC = () => {
-  const { posts } = useFullList();
+  const { uid, posts } = useFullList();
 
   return (
     <div>
@@ -26,6 +18,7 @@ const FullList: React.FC = () => {
             {posts.map((post: any) => (
               <FullPost
                 key={post.id}
+                uid={uid}
                 listId={post.id}
                 listname={post.listname}
                 timestamp={post.timestamp}
