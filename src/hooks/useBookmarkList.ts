@@ -44,6 +44,7 @@ export const useBookmarkList = () => {
   }, [uid]);
 
   return {
+    uid,
     posts,
   };
 };
