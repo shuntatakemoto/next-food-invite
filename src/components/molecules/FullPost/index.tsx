@@ -7,7 +7,7 @@ import React from 'react';
 import { db } from '../../../libs/firebase';
 
 export type FullPostProps = {
-  id: string;
+  id?: string;
   uid: string;
   listId: string;
   listname: string;
