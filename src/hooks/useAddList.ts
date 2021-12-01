@@ -14,9 +14,9 @@ export const useAddList = () => {
   const [name, setName] = useState('');
   const [memo, setMemo] = useState('');
   const [restaurantUrl, setRestaurantUrl] = useState('');
-  const [fileUrl, setFileUrl] = useState<string>('');
+  const [fileUrl, setFileUrl] = useState<any>(null);
 
-  const onChangeImageHandler = (e: { target: { files: any[]; value: string } }) => {
+  const onChangeImageHandler = (e: any) => {
     if (e.target.files![0]) {
       setUploadImage(e.target.files![0]);
       const imageFile = e.target.files[0];
