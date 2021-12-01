@@ -1,11 +1,11 @@
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
 import type { AppProps } from 'next/app';
-import { Provider } from 'react-redux';
-import { store } from '../store';
-import { Auth } from '../libs/Auth';
 import React from 'react';
+import { Provider } from 'react-redux';
 import Layout from '../components/templates/layout';
+import { Auth } from '../libs/Auth';
+import { store } from '../store';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

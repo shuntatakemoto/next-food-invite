@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectUser } from '../../../../../../../store/user';
 import { Restaurant } from '../../../../../../../components/organisms/Restaurant';
+import { selectUser } from '../../../../../../../store/user';
 
 const RestaurantPage: React.FC = () => {
   const user = useSelector(selectUser);

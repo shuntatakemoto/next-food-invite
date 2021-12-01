@@ -1,7 +1,7 @@
-import React from 'react';
+import firebase from 'firebase/app';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import firebase from 'firebase/app';
+import React from 'react';
 
 type ListContentCardProps = {
   restaurantId: string;

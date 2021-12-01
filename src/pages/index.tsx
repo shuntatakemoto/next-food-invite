@@ -1,15 +1,12 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import React from 'react';
-import { auth, provider } from '../libs/firebase';
-import { useSelector } from 'react-redux';
-import { selectUser } from '../store/user/index';
-import { useJudgeLogin } from '../hooks/useJudgeLogin';
 import { Button } from '../components/atoms/Button';
+import { useJudgeLogin } from '../hooks/useJudgeLogin';
+import { auth, provider } from '../libs/firebase';
 
 const Home: NextPage = () => {
   useJudgeLogin();
-  const user = useSelector(selectUser);
 
   const signInTwitter = async () => {
     await auth.signInWithPopup(provider).catch((err: any) => alert(err.message));

@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
-import LibraryAddIcon from '@material-ui/icons/LibraryAdd';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
+import LibraryAddIcon from '@material-ui/icons/LibraryAdd';
 import SearchIcon from '@material-ui/icons/Search';
 import { Emoji } from 'emoji-mart';
+import Link from 'next/link';
+import React from 'react';
 
 export type HeaderProps = {
   isSignedIn?: boolean;

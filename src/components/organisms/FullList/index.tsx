@@ -1,7 +1,7 @@
 import React from 'react';
-import FullPost from '../../molecules/FullPost';
 import { useFullList } from '../../../hooks/useFullList';
 import { Headline } from '../../atoms/Headline';
+import FullPost from '../../molecules/FullPost';
 
 const FullList: React.FC = () => {
   const { uid, posts } = useFullList();

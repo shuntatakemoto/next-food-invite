@@ -1,11 +1,11 @@
-import React from 'react';
 import { Emoji } from 'emoji-mart';
-import { Button } from '../../atoms/Button';
-import { SubProfile } from '../../molecules/SubProfile';
+import React from 'react';
 import Modal from 'react-modal';
-import { Share } from '../../molecules/Share';
 import { useList } from '../../../hooks/useList';
+import { Button } from '../../atoms/Button';
 import { Headline } from '../../atoms/Headline';
+import { Share } from '../../molecules/Share';
+import { SubProfile } from '../../molecules/SubProfile';
 
 Modal.setAppElement('#__next');
 

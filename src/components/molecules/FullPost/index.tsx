@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
 import { Emoji } from 'emoji-mart';
 import firebase from 'firebase/app';
+import Link from 'next/link';
+import React from 'react';
 
 export type FullPostProps = {
   uid: string;

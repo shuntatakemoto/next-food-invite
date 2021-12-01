@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectUser } from '../../../store/user/index';
-import FullList from '../../../components/organisms/FullList';
 import { Profile } from '../../../components/molecules/Profile';
+import FullList from '../../../components/organisms/FullList';
+import { selectUser } from '../../../store/user/index';
 
 const MyPage: React.FC = () => {
   const user = useSelector(selectUser);

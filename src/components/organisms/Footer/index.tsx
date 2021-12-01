@@ -1,7 +1,7 @@
+import { Emoji } from 'emoji-mart';
+import Link from 'next/link';
 import React from 'react';
 import { auth } from '../../../libs/firebase';
-import Link from 'next/link';
-import { Emoji } from 'emoji-mart';
 
 export type FooterProps = {
   isSignedIn?: boolean;

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from '../../atoms/Button';
 import { useRestaurant } from '../../../hooks/useRestaurant';
+import { Button } from '../../atoms/Button';
 import { Headline } from '../../atoms/Headline';
 
 export const Restaurant: React.FC = () => {
