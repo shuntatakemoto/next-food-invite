@@ -10,7 +10,7 @@ export const useFullList = () => {
       id: '',
       listname: '',
       username: '',
-      timestamp: null,
+      timestamp: undefined,
       emojiname: '',
     },
   ]);

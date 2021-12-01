@@ -15,7 +15,7 @@ const FullList: React.FC = () => {
       <div className='grid grid-cols-2 xl:grid-cols-4 text-center'>
         {posts[0]?.id && (
           <>
-            {posts.map((post: any) => (
+            {posts.map((post) => (
               <FullPost
                 key={post.id}
                 uid={uid}

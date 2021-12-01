@@ -10,7 +10,7 @@ export const ListContent: React.FC = () => {
     {
       restaurantId: '',
       username: '',
-      timestamp: null,
+      timestamp: undefined,
       imageurl: '',
       memo: '',
       url: '',
@@ -50,7 +50,7 @@ export const ListContent: React.FC = () => {
     <div className='grid grid-cols-2 xl:grid-cols-4 text-center'>
       {posts[0]?.name && (
         <>
-          {posts.map((post: any) => (
+          {posts.map((post) => (
             <ListContentCard
               key={post.name}
               restaurantId={post.restaurantId}

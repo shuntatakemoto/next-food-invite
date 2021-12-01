@@ -64,7 +64,7 @@ export const useList = () => {
       .then(() => {
         console.log('Document successfully deleted!');
       })
-      .catch((error: any) => {
+      .catch((error) => {
         console.error('Error removing document: ', error);
       });
     router.replace('/');

@@ -6,7 +6,7 @@ import firebase from 'firebase/app';
 type ListContentCardProps = {
   restaurantId: string;
   username: string;
-  timestamp: firebase.firestore.FieldValue;
+  timestamp?: firebase.firestore.FieldValue;
   imageurl: string;
   memo?: string;
   url?: string;
@@ -15,7 +15,7 @@ type ListContentCardProps = {
 
 const ListContentCard: React.FC<ListContentCardProps> = (props) => {
   const router = useRouter();
-  const { uid, listId }: any = router.query;
+  const { uid, listId } = router.query;
 
   return (
     <div className=' rounded-lg shadow-xl overflow-hidden h-48 xl:h-60 m-4 xl:m-6'>

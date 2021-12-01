@@ -12,7 +12,7 @@ export const useBookmarkList = () => {
       listname: '',
       listid: '',
       username: '',
-      timestamp: null,
+      timestamp: undefined,
       emojiname: '',
     },
   ]);

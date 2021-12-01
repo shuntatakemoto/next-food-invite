@@ -8,7 +8,7 @@ export type FullPostProps = {
   listId: string;
   listname: string;
   username: string;
-  timestamp: firebase.firestore.FieldValue;
+  timestamp?: firebase.firestore.FieldValue;
   emojiname: string;
 };
 

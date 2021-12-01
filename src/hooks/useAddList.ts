@@ -9,13 +9,14 @@ export const useAddList = () => {
   const user = useSelector(selectUser);
   const router = useRouter();
   const { uid, listId }: any = router.query;
+
   const [uploadImage, setUploadImage] = useState<File | null>(null);
   const [name, setName] = useState('');
   const [memo, setMemo] = useState('');
   const [restaurantUrl, setRestaurantUrl] = useState('');
-  const [fileUrl, setFileUrl] = useState<any>(null);
+  const [fileUrl, setFileUrl] = useState<string>('');
 
-  const onChangeImageHandler = (e: any) => {
+  const onChangeImageHandler = (e: { target: { files: any[]; value: string } }) => {
     if (e.target.files![0]) {
       setUploadImage(e.target.files![0]);
       const imageFile = e.target.files[0];
