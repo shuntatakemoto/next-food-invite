@@ -38,7 +38,7 @@ export const List: React.FC = () => {
         <div className='text-center '>
           <div className='mb-2'>{user.uid && <Button label='追加する' onClick={addLink} />}</div>
           <div className='mb-2'>
-            {user.uid && <Button label='シェアする' onClick={openModal} />}
+            <Button label='シェアする' onClick={openModal} />
             <Modal
               isOpen={modalIsOpen}
               onAfterOpen={afterOpenModal}
