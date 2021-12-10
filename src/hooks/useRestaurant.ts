@@ -1,8 +1,8 @@
+import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { selectUser } from '../store/user';
 import { db } from '../libs/firebase';
-import { useRouter } from 'next/router';
+import { selectUser } from '../store/user';
 
 export const useRestaurant = () => {
   const user = useSelector(selectUser);

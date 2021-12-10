@@ -1,6 +1,6 @@
+import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useRouter } from 'next/router';
 import { selectUser } from '../store/user/index';
 
 export const useJudgeLogin = () => {
