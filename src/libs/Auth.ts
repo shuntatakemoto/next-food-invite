@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { auth } from './firebase';
-import { selectUser } from '../store/user/index';
-import { login, logout } from '../store/user';
 import { useJudgeLogin } from '../hooks/useJudgeLogin';
+import { login, logout, selectUser } from '../store/user';
+import { auth } from './firebase';
 
 export const Auth = ({ children }: any) => {
   const user = useSelector(selectUser);
