@@ -19,6 +19,7 @@ const Layout = ({
   image = 'https://food-invite.vercel.app/default.png',
 }: LayoutProps) => {
   const user = useSelector(selectUser);
+  console.log('OGP-image-test', image);
   return (
     <>
       <Head>
