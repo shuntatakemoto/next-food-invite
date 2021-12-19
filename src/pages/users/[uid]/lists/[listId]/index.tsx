@@ -12,7 +12,11 @@ const ListPage: React.FC<Props> = (props) => {
   const { listId } = props;
   return (
     // <Layout image={`${process.env.NEXT_PUBLIC_BASE_URL}/api/ogp/${listId}`}>
-    <Layout image={`${process.env.NEXT_PUBLIC_BASE_URL}/api/ogp?text=${listId}`}>
+    <Layout
+      image={
+        'https://res.cloudinary.com/dhho8x7av/image/upload/l_text:Sawarabi%20Gothic_50_bold:これはOGPテキストです！,co_rgb:333,w_500,c_fit/v1639747883/ogp_v2pkyb.png'
+      }
+    >
       <main className='flex flex-col bg-main-color'>
         <List />
         <ListContent />
