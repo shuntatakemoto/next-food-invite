@@ -36,7 +36,9 @@ export const List: React.FC = () => {
         </div>
 
         <div className='text-center '>
-          <div className='mb-2'>{user.uid && <Button label='追加する' onClick={addLink} />}</div>
+          <div className='mb-2'>
+            {user.uid == post.userid && <Button label='追加する' onClick={addLink} />}
+          </div>
           <div className='mb-2'>
             <Button label='シェアする' onClick={openModal} />
             <Modal
@@ -72,13 +74,17 @@ export const List: React.FC = () => {
             </Modal>
           </div>
           <div className='mb-2'>
-            <Button label='一緒に行きたい' onClick={DmLink} />
+            {user.uid && user.uid != post.userid && (
+              <Button label='一緒に行きたい' onClick={DmLink} />
+            )}
           </div>
           <div className='mb-2'>
-            {user.uid && <Button label='ブックマークする' onClick={bookmark} />}
+            {user.uid && user.uid != post.userid && (
+              <Button label='ブックマークする' onClick={bookmark} />
+            )}
           </div>
           <div className=' mb-4'>
-            {user.uid && (
+            {user.uid == post.userid && (
               <Button onClick={deleteList} label='このリストを削除する' primary={true} />
             )}
           </div>
