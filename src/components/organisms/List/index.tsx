@@ -74,9 +74,7 @@ export const List: React.FC = () => {
             </Modal>
           </div>
           <div className='mb-2'>
-            {user.uid && user.uid != post.userid && (
-              <Button label='一緒に行きたい' onClick={DmLink} />
-            )}
+            {user.uid != post.userid && <Button label='一緒に行きたい' onClick={DmLink} />}
           </div>
           <div className='mb-2'>
             {user.uid && user.uid != post.userid && (
