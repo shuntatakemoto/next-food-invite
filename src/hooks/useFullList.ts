@@ -7,6 +7,7 @@ export const useFullList = () => {
   const { uid }: any = router.query;
   const [posts, setPosts] = useState([
     {
+      avatar: '',
       id: '',
       listname: '',
       username: '',
@@ -27,6 +28,7 @@ export const useFullList = () => {
           setPosts(
             snapshot.docs.map((doc) => ({
               id: doc.id,
+              avatar: doc.data().avatar,
               listname: doc.data().listname,
               timestamp: doc.data().timestamp,
               username: doc.data().username,
