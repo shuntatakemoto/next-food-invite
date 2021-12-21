@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { db } from '../libs/firebase';
 import { selectUser } from '../store/user';
+import { Params } from '../types/params';
 
 type ListsProps = {
   userid: string;
@@ -20,7 +21,7 @@ type ListsProps = {
 export const useList = () => {
   const user = useSelector(selectUser);
   const router = useRouter();
-  const { uid, listId }: any = router.query;
+  const { uid, listId } = router.query as Params;
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const [post, setPost] = useState<ListsProps>({

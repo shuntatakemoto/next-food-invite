@@ -3,12 +3,13 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { db } from '../libs/firebase';
 import { selectUser } from '../store/user';
+import { Params } from '../types/params';
 
 export const useRestaurant = () => {
   const user = useSelector(selectUser);
   const [posts, setPosts] = useState<any>('');
   const router = useRouter();
-  const { uid, listId, restaurantId }: any = router.query;
+  const { uid, listId, restaurantId } = router.query as Params;
 
   useEffect(() => {
     if (uid && listId && restaurantId) {

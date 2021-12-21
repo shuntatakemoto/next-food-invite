@@ -1,4 +1,5 @@
 import firebase from 'firebase/app';
+import { Params } from 'next/dist/server/router';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -8,7 +9,7 @@ import { selectUser } from '../store/user';
 export const useAddList = () => {
   const user = useSelector(selectUser);
   const router = useRouter();
-  const { uid, listId }: any = router.query;
+  const { uid, listId } = router.query as Params;
 
   const [uploadImage, setUploadImage] = useState<File | null>(null);
   const [name, setName] = useState('');

@@ -1,10 +1,11 @@
 import { useRouter } from 'next/dist/client/router';
 import { useState, useEffect } from 'react';
 import { db } from '../libs/firebase';
+import { Params } from '../types/params';
 
 export const useBookmarkList = () => {
   const router = useRouter();
-  const { uid }: any = router.query;
+  const { uid } = router.query as Params;
   const [posts, setPosts] = useState([
     {
       avatar: '',
