@@ -14,6 +14,7 @@ export const useBookmarkList = () => {
       username: '',
       timestamp: undefined,
       emojiname: '',
+      listurl: '',
     },
   ]);
 
@@ -34,6 +35,7 @@ export const useBookmarkList = () => {
               timestamp: doc.data().timestamp,
               username: doc.data().username,
               emojiname: doc.data().emojiname,
+              listurl: doc.data().listurl,
             })),
           ),
         );

@@ -19,6 +19,7 @@ export const Bookmark: React.FC = () => {
               timestamp={post.timestamp}
               username={post.username}
               emojiname={post.emojiname}
+              listurl={post.listurl}
             />
           ))}
         </>

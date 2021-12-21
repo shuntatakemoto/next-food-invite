@@ -14,6 +14,7 @@ export type FullPostProps = {
   username: string;
   timestamp?: firebase.firestore.FieldValue;
   emojiname: string;
+  listurl?: string;
 };
 
 const FullPost: React.FC<FullPostProps> = (props) => {
@@ -37,14 +38,20 @@ const FullPost: React.FC<FullPostProps> = (props) => {
 
   return (
     <div className=' rounded-lg shadow-xl overflow-hidden h-48 xl:h-60 m-4 xl:m-6'>
-      <Link href={`/users/${props.uid}/lists/${props.listId}`}>
+      <Link
+        href={
+          router.pathname.includes('bookmark')
+            ? `${props.listurl}`
+            : `/users/${props.uid}/lists/${props.listId}`
+        }
+      >
         <div className='h-36 xl:h-48 grid justify-items-center items-center bg-gray-200'>
           <Emoji emoji={emojiName} size={64} set='twitter' />
         </div>
       </Link>
       <div className='text-center h-12 xl:h-12 grid justify-items-center items-center bg-gray-200'>
         <p className='text-base'>{props.listname}</p>
-        {router.pathname === '/users/[uid]/bookmark' && (
+        {router.pathname.includes('bookmark') && (
           <button onClick={deleteBookmark}>
             <HighlightOffIcon />
           </button>
