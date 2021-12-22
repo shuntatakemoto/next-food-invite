@@ -1,8 +1,11 @@
+import firebase from 'firebase/app';
+import router from 'next/router';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useJudgeLogin } from '../hooks/useJudgeLogin';
 import { login, logout, selectUser } from '../store/user';
-import { auth } from './firebase';
+import { Params } from '../types/params';
+import { auth, db } from './firebase';
 
 export const Auth = ({ children }: any) => {
   const user = useSelector(selectUser);
@@ -38,6 +41,19 @@ export const Auth = ({ children }: any) => {
       unSub();
     };
   }, [dispatch]);
+
+  useEffect(() => {
+    const { uid } = router.query as Params;
+    if (user.uid) {
+      db.collection('users').doc(uid).set({
+        avatar: user.photoUrl,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        username: user.displayName,
+        userid: user.uid,
+        twitterid: user.twitterUid,
+      });
+    }
+  }, []);
 
   return children;
 };
