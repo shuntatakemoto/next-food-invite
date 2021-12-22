@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   useJudgeLogin();
 
   const signInTwitter = async () => {
-    await auth.signInWithPopup(provider).catch((err: any) => alert(err.message));
+    await auth.signInWithPopup(provider).catch((err) => alert(err.message));
   };
 
   return (

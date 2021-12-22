@@ -9,16 +9,16 @@ export const Restaurant: React.FC = () => {
   return (
     <div className='flex-1 text-center'>
       <div className='py-8'>
-        <Headline headline={posts.name} />
+        <Headline headline={posts?.name} />
       </div>
-      <p className='text-center pb-4'>{posts.memo}</p>
+      <p className='text-center pb-4'>{posts?.memo}</p>
       <Button label='詳しい店情報' onClick={RestaurantLink} />
 
       <div className='mt-7'>
-        <img src={posts.imageurl} className='text-center w-72 h-72 object-cover m-auto' alt='' />
+        <img src={posts?.imageurl} className='text-center w-72 h-72 object-cover m-auto' alt='' />
       </div>
       <div className='grid justify-items-center items-center py-4'>
-        <p>added by {posts.username}</p>
+        <p>added by {posts?.username}</p>
       </div>
       <div className='text-center '>
         {user.uid && <Button label='この店を削除する' onClick={deleteItem} primary={true} />}
