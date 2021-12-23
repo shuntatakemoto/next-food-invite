@@ -13,12 +13,12 @@ export type HeaderProps = {
 export const Header: React.FC<HeaderProps> = ({ isSignedIn, uid }) => {
   return (
     <div className='bg-sub-color flex h-16 items-center justify-evenly'>
-      <Link href='/'>
+      <Link href='/' passHref>
         <h3 className='text-2xl font-bold'>Food Invite</h3>
       </Link>
 
       {isSignedIn ? (
-        <Link href='/users/[uid]/create-list' as={`/users/${uid}/create-list`}>
+        <Link href='/users/[uid]/create-list' as={`/users/${uid}/create-list`} passHref>
           <LibraryAddIcon fontSize='large' />
         </Link>
       ) : (
@@ -26,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({ isSignedIn, uid }) => {
       )}
 
       {isSignedIn ? (
-        <Link href='/search'>
+        <Link href='/search' passHref>
           <SearchIcon fontSize='large' />
         </Link>
       ) : (
@@ -34,7 +34,7 @@ export const Header: React.FC<HeaderProps> = ({ isSignedIn, uid }) => {
       )}
 
       {isSignedIn ? (
-        <Link href='/users/[uid]/bookmark' as={`/users/${uid}/bookmark`}>
+        <Link href='/users/[uid]/bookmark' as={`/users/${uid}/bookmark`} passHref>
           <BookmarkIcon fontSize='large' />
         </Link>
       ) : (
