@@ -39,10 +39,6 @@ export const useList = () => {
     setIsOpen(true);
   };
 
-  const afterOpenModal = () => {
-    // モーダルが開いた後の処理
-  };
-
   const closeModal = () => {
     setIsOpen(false);
   };
@@ -107,7 +103,6 @@ export const useList = () => {
     user,
     post,
     openModal,
-    afterOpenModal,
     closeModal,
     modalIsOpen,
     deleteList,

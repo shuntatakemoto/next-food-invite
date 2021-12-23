@@ -16,7 +16,6 @@ type AddListProps = {
 
 const AddList: React.FC<AddListProps> = () => {
   const {
-    user,
     addList,
     setName,
     uploadImage,

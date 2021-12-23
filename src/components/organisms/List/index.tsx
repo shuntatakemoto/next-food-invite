@@ -16,7 +16,6 @@ export const List: React.FC = () => {
     addLink,
     openModal,
     modalIsOpen,
-    afterOpenModal,
     closeModal,
     DmLink,
     bookmark,
@@ -43,7 +42,6 @@ export const List: React.FC = () => {
             <Button label='シェアする' onClick={openModal} />
             <Modal
               isOpen={modalIsOpen}
-              onAfterOpen={afterOpenModal}
               onRequestClose={closeModal}
               style={{
                 overlay: {

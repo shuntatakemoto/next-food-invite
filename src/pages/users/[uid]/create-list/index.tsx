@@ -7,7 +7,7 @@ import Layout from '../../../../components/templates/layout';
 import { useCreateList } from '../../../../hooks/useCreateList';
 
 const CreateList: React.FC = () => {
-  const { createList, setListName, setEmojiName, user, listName } = useCreateList();
+  const { createList, setListName, setEmojiName, listName } = useCreateList();
 
   return (
     <Layout>
