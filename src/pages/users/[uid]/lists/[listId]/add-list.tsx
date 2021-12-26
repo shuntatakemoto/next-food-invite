@@ -64,7 +64,7 @@ const AddList: React.FC<AddListProps> = () => {
               </label>
               {/* プレビュー画像を表示 */}
               <div className='w-3/4 xl:w-2/5'>
-                <img src={fileUrl}></img>
+                <img src={fileUrl} alt='' />
               </div>
             </div>
 
