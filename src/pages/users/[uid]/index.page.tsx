@@ -1,17 +1,18 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Profile } from '../../../components/molecules/Profile';
 import FullList from '../../../components/organisms/FullList';
 import Layout from '../../../components/templates/layout';
-import { selectUser } from '../../../store/user/index';
+import { useFullList } from '../../../hooks/useFullList';
+import { useUser } from '../../../hooks/useUser';
 
 const MyPage: React.FC = () => {
-  const user = useSelector(selectUser);
+  const { posts } = useFullList();
+  const { userInfo } = useUser();
 
   return (
     <Layout>
       <main className='flex flex-col bg-main-color'>
-        <Profile photoUrl={user.photoUrl} displayName={user.displayName} />
+        <Profile posts={posts} userInfo={userInfo} />
         <FullList />
       </main>
     </Layout>

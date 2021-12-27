@@ -14,6 +14,22 @@ const Template: Story<ProfileProps> = (args) => <Profile {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  photoUrl: 'https://pbs.twimg.com/profile_images/1456218103348862976/4Cyrlwd4_normal.jpg',
-  displayName: 'foo',
+  posts: [
+    {
+      avatar: 'https://pbs.twimg.com/profile_images/1456218103348862976/4Cyrlwd4_normal.jpg',
+      username: 'foo',
+      id: 'foo',
+      listname: 'foo',
+      timestamp: undefined,
+      emojiname: '',
+    },
+  ],
+  userInfo: {
+    avatar: 'foo',
+    id: 'foo',
+    username: 'foo',
+    timestamp: undefined,
+    userid: 'foo',
+    twitterid: '1311159493359624193',
+  },
 };
