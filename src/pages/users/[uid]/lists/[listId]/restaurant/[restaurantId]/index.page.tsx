@@ -1,14 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { Restaurant } from '../../../../../../../components/organisms/Restaurant';
 import Layout from '../../../../../../../components/templates/layout';
-import { selectUser } from '../../../../../../../store/user';
+import { RestaurantContent } from '../RestaurantContent';
 
 const RestaurantPage: React.FC = () => {
   return (
     <Layout>
       <main className='flex flex-col bg-main-color'>
-        <Restaurant />
+        <RestaurantContent />
       </main>
     </Layout>
   );

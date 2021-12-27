@@ -1,7 +1,7 @@
 import React from 'react';
 import { Headline } from '../../../../components/atoms/Headline';
-import { Bookmark } from '../../../../components/organisms/Bookmark';
 import Layout from '../../../../components/templates/layout';
+import { BookmarkList } from './BookmarkList';
 
 const BookmarkPage: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const BookmarkPage: React.FC = () => {
         <div className='py-5'>
           <Headline headline='ブックマーク' />
         </div>
-        <Bookmark />
+        <BookmarkList />
       </main>
     </Layout>
   );
