@@ -1,12 +1,13 @@
 import { useRouter } from 'next/dist/client/router';
 import { useState, useEffect } from 'react';
 import { db } from '../libs/firebase';
+import { Lists } from '../types/lists';
 import { Params } from '../types/params';
 
 export const useFullList = () => {
   const router = useRouter();
   const { uid } = router.query as Params;
-  const [posts, setPosts] = useState([
+  const [posts, setPosts] = useState<Lists>([
     {
       avatar: '',
       id: '',
