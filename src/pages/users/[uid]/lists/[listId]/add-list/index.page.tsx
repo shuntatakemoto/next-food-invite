@@ -2,9 +2,9 @@ import TextField from '@material-ui/core/TextField';
 import AddPhotoIcon from '@material-ui/icons/AddAPhoto';
 import firebase from 'firebase/app';
 import React from 'react';
-import { Headline } from '../../../../../components/atoms/Headline';
-import Layout from '../../../../../components/templates/layout';
-import { useAddList } from '../../../../../hooks/useAddList';
+import { Headline } from '../../../../../../components/atoms/Headline';
+import Layout from '../../../../../../components/templates/layout';
+import { useAddList } from './useAddList';
 
 type AddListProps = {
   postId: string;

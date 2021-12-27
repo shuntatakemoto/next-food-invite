@@ -2,8 +2,8 @@ import firebase from 'firebase/app';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { db } from '../libs/firebase';
-import { selectUser } from '../store/user';
+import { db } from '../../../../libs/firebase';
+import { selectUser } from '../../../../store/user';
 import 'emoji-mart/css/emoji-mart.css';
 
 export const useCreateList = () => {

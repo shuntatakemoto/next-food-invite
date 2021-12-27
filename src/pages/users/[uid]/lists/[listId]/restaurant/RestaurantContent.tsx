@@ -1,9 +1,9 @@
 import React from 'react';
-import { useRestaurant } from '../../../hooks/useRestaurant';
-import { Button } from '../../atoms/Button';
-import { Headline } from '../../atoms/Headline';
+import { Button } from '../../../../../../components/atoms/Button';
+import { Headline } from '../../../../../../components/atoms/Headline';
+import { useRestaurant } from './useRestaurant';
 
-export const Restaurant: React.FC = () => {
+export const RestaurantContent: React.FC = () => {
   const { user, posts, RestaurantLink, deleteItem } = useRestaurant();
 
   return (
@@ -27,4 +27,4 @@ export const Restaurant: React.FC = () => {
   );
 };
 
-export default Restaurant;
+export default RestaurantContent;

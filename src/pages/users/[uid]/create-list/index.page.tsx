@@ -4,7 +4,7 @@ import React from 'react';
 import 'emoji-mart/css/emoji-mart.css';
 import { Headline } from '../../../../components/atoms/Headline';
 import Layout from '../../../../components/templates/layout';
-import { useCreateList } from '../../../../hooks/useCreateList';
+import { useCreateList } from './useCreateList';
 
 const CreateList: React.FC = () => {
   const { createList, setListName, setEmojiName, listName } = useCreateList();
