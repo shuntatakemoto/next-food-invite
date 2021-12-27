@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRestaurant } from '../../../hooks/useRestaurant';
+import { useRestaurant } from '../../../pages/users/[uid]/lists/[listId]/restaurant/useRestaurant';
 import { Button } from '../../atoms/Button';
 import { Headline } from '../../atoms/Headline';
 
