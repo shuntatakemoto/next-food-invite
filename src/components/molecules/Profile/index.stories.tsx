@@ -3,10 +3,12 @@ import React from 'react';
 
 import { Profile, ProfileProps } from './index';
 
-export default {
+const ProfileStory = {
   title: 'Components/molecules/Profile',
   component: Profile,
 };
+
+export default ProfileStory;
 
 const Template: Story<ProfileProps> = (args) => <Profile {...args} />;
 

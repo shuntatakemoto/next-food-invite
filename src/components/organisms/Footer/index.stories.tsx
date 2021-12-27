@@ -3,10 +3,12 @@ import React from 'react';
 
 import { Footer, FooterProps } from './index';
 
-export default {
+const FooterStory = {
   title: 'Components/Organisms/Footer',
   component: Footer,
 };
+
+export default FooterStory;
 
 const Template: Story<FooterProps> = (args) => <Footer {...args} />;
 

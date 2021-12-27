@@ -3,10 +3,12 @@ import React from 'react';
 
 import { SubProfile, SubProfileProps } from './index';
 
-export default {
+const SubProfileStory = {
   title: 'Components/molecules/SubProfile',
   component: SubProfile,
 };
+
+export default SubProfileStory;
 
 const Template: Story<SubProfileProps> = (args) => <SubProfile {...args} />;
 

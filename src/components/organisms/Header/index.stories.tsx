@@ -3,10 +3,12 @@ import React from 'react';
 
 import { Header, HeaderProps } from './index';
 
-export default {
+const HeaderStory = {
   title: 'Components/Organisms/Header',
   component: Header,
 };
+
+export default HeaderStory;
 
 const Template: Story<HeaderProps> = (args) => <Header {...args} />;
 

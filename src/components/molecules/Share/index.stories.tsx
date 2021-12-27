@@ -3,10 +3,12 @@ import React from 'react';
 
 import { Share, ShareProps } from './index';
 
-export default {
+const ShareStory = {
   title: 'Components/molecules/Share',
   component: Share,
 };
+
+export default ShareStory;
 
 const Template: Story<ShareProps> = (args) => <Share {...args} />;
 

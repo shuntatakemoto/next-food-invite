@@ -23,7 +23,7 @@ export const useRestaurant = () => {
         .get()
         .then((doc) => setPosts(doc.data()));
     }
-  }, [user]);
+  }, [uid, user, listId, restaurantId]);
 
   const RestaurantLink = () => {
     router.replace(posts?.url);

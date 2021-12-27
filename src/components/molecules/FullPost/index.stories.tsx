@@ -3,10 +3,12 @@ import React from 'react';
 
 import FullPost, { FullPostProps } from './index';
 
-export default {
+const FullPostStory = {
   title: 'Components/molecules/FullPost',
   component: FullPost,
 };
+
+export default FullPostStory;
 
 const Template: Story<FullPostProps> = (args) => <FullPost {...args} />;
 
