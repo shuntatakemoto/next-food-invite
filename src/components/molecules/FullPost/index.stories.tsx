@@ -18,4 +18,16 @@ Default.args = {
   username: 'foo',
   timestamp: undefined,
   emojiname: 'grinning',
+  isBookmarkPage: false,
+};
+
+export const BookmakPage = Template.bind({});
+BookmakPage.args = {
+  uid: 'foo',
+  listId: 'foo',
+  listname: 'foo',
+  username: 'foo',
+  timestamp: undefined,
+  emojiname: 'grinning',
+  isBookmarkPage: true,
 };

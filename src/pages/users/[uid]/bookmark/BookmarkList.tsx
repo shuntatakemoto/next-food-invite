@@ -3,7 +3,7 @@ import FullPost from '../../../../components/molecules/FullPost';
 import { useBookmarkList } from './useBookmarkList';
 
 export const BookmarkList: React.FC = () => {
-  const { uid, posts } = useBookmarkList();
+  const { uid, isBookmarkPage, posts } = useBookmarkList();
 
   return (
     <div className='grid grid-cols-2 xl:grid-cols-4 text-center'>
@@ -20,6 +20,7 @@ export const BookmarkList: React.FC = () => {
               username={post.username}
               emojiname={post.emojiname}
               listurl={post.listurl}
+              isBookmarkPage={isBookmarkPage}
             />
           ))}
         </>

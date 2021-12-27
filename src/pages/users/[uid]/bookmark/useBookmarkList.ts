@@ -6,6 +6,7 @@ import { Params } from '../../../../types/params';
 export const useBookmarkList = () => {
   const router = useRouter();
   const { uid } = router.query as Params;
+  const isBookmarkPage = router.pathname.includes('bookmark') ? true : false;
   const [posts, setPosts] = useState([
     {
       avatar: '',
@@ -48,6 +49,7 @@ export const useBookmarkList = () => {
 
   return {
     uid,
+    isBookmarkPage,
     posts,
   };
 };

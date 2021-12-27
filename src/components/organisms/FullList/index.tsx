@@ -24,6 +24,7 @@ const FullList: React.FC = () => {
                 timestamp={post.timestamp}
                 username={post.username}
                 emojiname={post.emojiname}
+                isBookmarkPage={false}
               />
             ))}
           </>
