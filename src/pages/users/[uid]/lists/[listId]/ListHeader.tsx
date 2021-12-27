@@ -1,15 +1,15 @@
 import { Emoji } from 'emoji-mart';
 import React from 'react';
 import Modal from 'react-modal';
-import { useList } from '../../../hooks/useList';
-import { Button } from '../../atoms/Button';
-import { Headline } from '../../atoms/Headline';
-import { Share } from '../../molecules/Share';
-import { SubProfile } from '../../molecules/SubProfile';
+import { Button } from '../../../../../components/atoms/Button';
+import { Headline } from '../../../../../components/atoms/Headline';
+import { Share } from '../../../../../components/molecules/Share';
+import { SubProfile } from '../../../../../components/molecules/SubProfile';
+import { useList } from '../../../../../hooks/useList';
 
 Modal.setAppElement('#__next');
 
-export const List: React.FC = () => {
+export const ListHeader: React.FC = () => {
   const {
     user,
     post,
