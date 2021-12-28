@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import TextField from '@material-ui/core/TextField';
 import AddPhotoIcon from '@material-ui/icons/AddAPhoto';
 import firebase from 'firebase/app';

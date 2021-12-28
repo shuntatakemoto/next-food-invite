@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import firebase from 'firebase/app';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -22,7 +23,11 @@ const ListContentCard: React.FC<ListContentCardProps> = (props) => {
       <Link href={`/users/${uid}/lists/${listId}/restaurant/${props.restaurantId}`} passHref>
         <div>
           <div className='h-36 xl:h-48 grid justify-items-center items-center bg-gray-200'>
-            <img src={props.imageurl} alt='' className='h-36 xl:h-48 w-full object-cover' />
+            <img
+              src={props.imageurl}
+              alt='food-image'
+              className='h-36 xl:h-48 w-full object-cover'
+            />
           </div>
           <div className='text-center h-12 xl:h-12 grid justify-items-center items-center bg-gray-200'>
             <p className='text-base'>{props.name}</p>

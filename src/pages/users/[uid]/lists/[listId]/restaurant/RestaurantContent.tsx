@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import { Button } from '../../../../../../components/atoms/Button';
 import { Headline } from '../../../../../../components/atoms/Headline';
@@ -15,7 +16,15 @@ export const RestaurantContent: React.FC = () => {
       <Button label='詳しい店情報' onClick={RestaurantLink} />
 
       <div className='mt-7'>
-        <img src={posts?.imageurl} className='text-center w-72 h-72 object-cover m-auto' alt='' />
+        {posts?.imageurl && (
+          <Image
+            src={posts?.imageurl}
+            alt='food-image'
+            width='300'
+            height='300'
+            objectFit='cover'
+          />
+        )}
       </div>
       <div className='grid justify-items-center items-center py-4'>
         <p>added by {posts?.username}</p>

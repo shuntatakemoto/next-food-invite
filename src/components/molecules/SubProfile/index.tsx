@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export type SubProfileProps = {
@@ -10,10 +11,11 @@ export const SubProfile: React.FC<SubProfileProps> = (props) => {
     <div className='flex'>
       <div className='w-8 mr-5'>
         {props.avatar && (
-          <img
+          <Image
             src={props.avatar.replace('normal', '200x200')}
             alt='Profile Image'
-            className='w-40'
+            width='160'
+            height='160'
           />
         )}
       </div>
