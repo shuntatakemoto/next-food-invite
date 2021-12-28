@@ -20,6 +20,7 @@ export const Profile: React.FC<ProfileProps> = (props) => {
           className='rounded-3xl'
           width='160'
           height='160'
+          priority={true}
         />
       )}
       <p className='text-2xl font-bold'>

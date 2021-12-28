@@ -23,6 +23,7 @@ export const RestaurantContent: React.FC = () => {
             width='300'
             height='300'
             objectFit='cover'
+            priority={true}
           />
         )}
       </div>
