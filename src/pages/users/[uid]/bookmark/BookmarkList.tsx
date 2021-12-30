@@ -6,7 +6,7 @@ export const BookmarkList: React.FC = () => {
   const { uid, isBookmarkPage, posts } = useBookmarkList();
 
   return (
-    <div className='grid grid-cols-2 xl:grid-cols-4 text-center'>
+    <div className='grid grid-cols-2 text-center xl:grid-cols-4'>
       {posts[0]?.id && (
         <>
           {posts.map((post) => (

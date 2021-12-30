@@ -5,7 +5,7 @@ const Search: React.FC = () => {
   return (
     <Layout>
       <main className='flex flex-col bg-main-color'>
-        <p className='text-center font-bold text-2xl'>現在開発中です</p>
+        <p className='text-2xl font-bold text-center'>現在開発中です</p>
       </main>
     </Layout>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable @next/next/no-img-element */
 import firebase from 'firebase/app';
 import Link from 'next/link';
@@ -19,17 +20,17 @@ const ListContentCard: React.FC<ListContentCardProps> = (props) => {
   const { uid, listId } = router.query;
 
   return (
-    <div className=' rounded-lg shadow-xl overflow-hidden h-48 xl:h-60 m-4 xl:m-6'>
+    <div className='overflow-hidden m-4 h-48 rounded-lg xl:m-6 xl:h-60'>
       <Link href={`/users/${uid}/lists/${listId}/restaurant/${props.restaurantId}`} passHref>
         <div>
-          <div className='h-36 xl:h-48 grid justify-items-center items-center bg-gray-200'>
+          <div className='grid justify-items-center items-center h-36 bg-gray-200 xl:h-48'>
             <img
               src={props.imageurl}
               alt='food-image'
-              className='h-36 xl:h-48 w-full object-cover'
+              className='object-cover w-full h-36 xl:h-48'
             />
           </div>
-          <div className='text-center h-12 xl:h-12 grid justify-items-center items-center bg-gray-200'>
+          <div className='grid justify-items-center items-center h-12 text-center bg-gray-200 xl:h-12'>
             <p className='text-base'>{props.name}</p>
           </div>
         </div>

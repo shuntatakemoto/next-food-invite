@@ -27,7 +27,7 @@ export const ListHeader: React.FC<ListsHeaderProps> = (props) => {
     <div className='pt-5 '>
       <SubProfile avatar={props.post.avatar} username={props.post.username} />
       <div className='mb-6'>
-        <div className='text-center py-10'>
+        <div className='py-10 text-center'>
           {props.post.emojiname && <Emoji emoji={props.post.emojiname} size={64} set='twitter' />}
         </div>
         <div className='mb-8'>

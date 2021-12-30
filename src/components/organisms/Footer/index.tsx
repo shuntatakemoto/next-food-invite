@@ -9,7 +9,7 @@ export type FooterProps = {
 
 export const Footer: React.FC<FooterProps> = ({ isSignedIn }) => {
   return (
-    <div className='bg-sub-color flex h-16 items-center justify-evenly mt-auto'>
+    <div className='flex justify-evenly items-center mt-auto h-16 bg-sub-color'>
       {isSignedIn ? (
         <Link href='/' passHref>
           <p className='text-xl font-bold'>Home</p>

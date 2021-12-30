@@ -9,7 +9,7 @@ export type SubProfileProps = {
 export const SubProfile: React.FC<SubProfileProps> = (props) => {
   return (
     <div className='flex'>
-      <div className='w-8 mr-5'>
+      <div className='mr-5 w-8'>
         {props.avatar && (
           <Image
             src={props.avatar.replace('normal', '200x200')}

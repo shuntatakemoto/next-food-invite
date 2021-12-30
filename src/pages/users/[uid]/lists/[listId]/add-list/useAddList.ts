@@ -36,12 +36,11 @@ export const useAddList = () => {
         .map((n) => S[n % S.length])
         .join('');
       const fileName = randomChar + '_' + uploadImage.name;
-      const uploadTweetImg = storage.ref(`${uid}/${fileName}`).put(uploadImage);
-      uploadTweetImg.on(
+      const uploadImg = storage.ref(`${uid}/${fileName}`).put(uploadImage);
+      uploadImg.on(
         firebase.storage.TaskEvent.STATE_CHANGED,
-        () => {},
         (err) => {
-          alert(err.message);
+          alert(err);
         },
         async () => {
           await storage

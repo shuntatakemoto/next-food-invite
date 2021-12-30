@@ -35,7 +35,7 @@ const AddList: React.FC<AddListProps> = () => {
         <div className='py-4'>
           <Headline headline='店を追加' />
         </div>
-        <form onSubmit={addList} className='px-10 xl:w-1/4 flex-1'>
+        <form onSubmit={addList} className='flex-1 px-10 xl:w-1/4'>
           <div>
             <TextField
               label='店名'

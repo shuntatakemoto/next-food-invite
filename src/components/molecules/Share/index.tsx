@@ -21,7 +21,7 @@ export const Share: React.FC<ShareProps> = (props) => {
       <p>このリストをシェア</p>
       <p>{props.text}</p>
 
-      <ul className='flex justify-center list-none pt-4 pb-4'>
+      <ul className='flex justify-center pt-4 pb-4 list-none'>
         <li className='mr-8'>
           <TwitterShareButton url={props.url} title={props.text}>
             <TwitterIcon size={32} round={true} />

@@ -12,7 +12,7 @@ export type HeaderProps = {
 
 export const Header: React.FC<HeaderProps> = ({ isSignedIn, uid }) => {
   return (
-    <div className='bg-sub-color flex h-16 items-center justify-evenly'>
+    <div className='flex justify-evenly items-center h-16 bg-sub-color'>
       <Link href='/' passHref>
         <h3 className='text-2xl font-bold'>Food Invite</h3>
       </Link>

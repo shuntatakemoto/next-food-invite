@@ -12,7 +12,7 @@ export const RestaurantContent: React.FC = () => {
       <div className='py-8'>
         <Headline headline={posts?.name} />
       </div>
-      <p className='text-center pb-4'>{posts?.memo}</p>
+      <p className='pb-4 text-center'>{posts?.memo}</p>
       <Button label='詳しい店情報' onClick={RestaurantLink} />
 
       <div className='mt-7'>

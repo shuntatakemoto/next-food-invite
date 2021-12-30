@@ -23,16 +23,16 @@ const Home: NextPage = () => {
 
       <Layout>
         <main className='text-center bg-main-color'>
-          <p className='text-5xl p-12 font-bold'>Food Invite</p>
+          <p className='p-12 text-5xl font-bold'>Food Invite</p>
           <p className='m-4'>サービスを利用するにはTwitterでログインが必要です。</p>
           <Button label='Sign In with Twitter' onClick={signInTwitter} backgroundColor='#EEE8AA' />
-          <p className='text-2xl mt-16'>このアプリは何？</p>
+          <p className='mt-16 text-2xl'>このアプリは何？</p>
           <p>・知り合いをご飯に誘うハードルを下げること </p>
           <p>・地元民がお勧めする飲食店を知ること</p>
           <p>を目的としたアプリです</p>
 
           <div className=' p-4 '>
-            <p className='text-2xl mt-12'>このアプリでできることは？</p>
+            <p className='mt-12 text-2xl'>このアプリでできることは？</p>
             <p className=' mt-4'>
               ・行きたい飲食店リスト、お気に入り飲食店リストなどといったリストを作成できます（イメージはAmazonの欲しいものリスト）
             </p>
