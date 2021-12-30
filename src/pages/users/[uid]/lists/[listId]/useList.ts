@@ -52,7 +52,7 @@ export const useList = () => {
         .get()
         .then((doc: any) => setPost(doc.data()));
     }
-  }, [uid]);
+  }, [listId, uid]);
 
   const deleteList = () => {
     db.collection('users')
