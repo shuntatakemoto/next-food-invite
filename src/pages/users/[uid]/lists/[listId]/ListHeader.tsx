@@ -5,7 +5,7 @@ import { Button } from '../../../../../components/atoms/Button';
 import { Headline } from '../../../../../components/atoms/Headline';
 import { Share } from '../../../../../components/molecules/Share';
 import { SubProfile } from '../../../../../components/molecules/SubProfile';
-import { useList } from '../../../../../hooks/useList';
+import { useList } from './useList';
 
 Modal.setAppElement('#__next');
 
