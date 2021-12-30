@@ -1,35 +1,44 @@
 import React from 'react';
-import { useFullList } from '../../../hooks/useFullList';
+import { Lists } from '../../../types/lists';
+import { Button } from '../../atoms/Button';
 import { Headline } from '../../atoms/Headline';
 import FullPost from '../../molecules/FullPost';
 
-const FullList: React.FC = () => {
-  const { uid, posts } = useFullList();
+export type FullListProps = {
+  posts: Lists;
+  uid: string;
+  addList?: () => void;
+};
 
+const FullList: React.FC<FullListProps> = (props) => {
   return (
     <div>
-      <div className='py-5'>
+      <div className='py-8'>
         <Headline headline='マイリスト' />
       </div>
-
-      <div className='grid grid-cols-2 xl:grid-cols-4 text-center'>
-        {posts[0]?.id && (
-          <>
-            {posts.map((post) => (
-              <FullPost
-                key={post.id}
-                uid={uid}
-                listId={post.id}
-                listname={post.listname}
-                timestamp={post.timestamp}
-                username={post.username}
-                emojiname={post.emojiname}
-                isBookmarkPage={false}
-              />
-            ))}
-          </>
-        )}
-      </div>
+      {props.posts[0]?.id ? (
+        <div className='grid grid-cols-2 xl:grid-cols-4 text-center'>
+          {props.posts.map((post) => (
+            <FullPost
+              key={post.id}
+              uid={props.uid}
+              listId={post.id}
+              listname={post.listname}
+              timestamp={post.timestamp}
+              username={post.username}
+              emojiname={post.emojiname}
+              isBookmarkPage={false}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className='py-8'>
+          <Headline headline='まだリストがありません' size='small' />
+          <div className='text-center pt-4'>
+            <Button label='リストを追加する' onClick={props.addList} size='small' />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
