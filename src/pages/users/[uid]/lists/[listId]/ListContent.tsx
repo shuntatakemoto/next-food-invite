@@ -2,7 +2,7 @@ import React from 'react';
 import { Headline } from '../../../../../components/atoms/Headline';
 import ListContentCard from './ListContentCard';
 
-type ListContent = {
+type ListContentProps = {
   posts: {
     restaurantId: string;
     username: string;
@@ -14,7 +14,7 @@ type ListContent = {
   }[];
 };
 
-export const ListContent: React.FC<ListContent> = (props) => {
+export const ListContent: React.FC<ListContentProps> = (props) => {
   return (
     <div>
       {props.posts[0]?.name ? (

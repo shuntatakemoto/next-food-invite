@@ -11,7 +11,7 @@ export const useCreateList = () => {
   const router = useRouter();
   const [listName, setListName] = useState('');
   const [emojiName, setEmojiName] = useState('');
-  const newEmojiName = emojiName.replace(/\"/g, '');
+  const newEmojiName = emojiName.replace(/"/g, '');
 
   const createList = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
