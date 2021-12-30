@@ -1,16 +1,25 @@
 import React from 'react';
 import { Headline } from '../../../../../components/atoms/Headline';
 import ListContentCard from './ListContentCard';
-import { useListContent } from './useListContent';
 
-export const ListContent: React.FC = () => {
-  const { posts } = useListContent();
+type ListContent = {
+  posts: {
+    restaurantId: string;
+    username: string;
+    timestamp: undefined;
+    imageurl: string;
+    memo: string;
+    url: string;
+    name: string;
+  }[];
+};
 
+export const ListContent: React.FC<ListContent> = (props) => {
   return (
     <div>
-      {posts[0]?.name ? (
+      {props.posts[0]?.name ? (
         <div className='grid grid-cols-2 xl:grid-cols-4 text-center'>
-          {posts.map((post) => (
+          {props.posts.map((post) => (
             <ListContentCard
               key={post.name}
               restaurantId={post.restaurantId}

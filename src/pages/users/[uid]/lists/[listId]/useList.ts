@@ -6,7 +6,7 @@ import { db } from '../../../../../libs/firebase';
 import { selectUser } from '../../../../../store/user';
 import { Params } from '../../../../../types/params';
 
-type ListsProps = {
+export type ListsProps = {
   userid: string;
   avatar?: string;
   listname: string;
