@@ -6,14 +6,14 @@ import { useFullList } from '../../../hooks/useFullList';
 import { useUser } from '../../../hooks/useUser';
 
 const MyPage: React.FC = () => {
-  const { uid, posts } = useFullList();
+  const { uid, addList, posts } = useFullList();
   const { userInfo } = useUser();
 
   return (
     <Layout>
       <main className='flex flex-col bg-main-color'>
         <Profile userInfo={userInfo} />
-        <FullList posts={posts} uid={uid} />
+        <FullList posts={posts} uid={uid} addList={addList} />
       </main>
     </Layout>
   );

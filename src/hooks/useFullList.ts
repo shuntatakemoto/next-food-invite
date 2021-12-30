@@ -7,6 +7,7 @@ import { Params } from '../types/params';
 export const useFullList = () => {
   const router = useRouter();
   const { uid } = router.query as Params;
+  const addList = () => router.replace(`/users/${uid}/create-list`);
   const [posts, setPosts] = useState<Lists>([
     {
       avatar: '',
@@ -46,6 +47,7 @@ export const useFullList = () => {
 
   return {
     uid,
+    addList,
     posts,
   };
 };

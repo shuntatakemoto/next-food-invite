@@ -1,17 +1,19 @@
 import React from 'react';
 import { Lists } from '../../../types/lists';
+import { Button } from '../../atoms/Button';
 import { Headline } from '../../atoms/Headline';
 import FullPost from '../../molecules/FullPost';
 
 export type FullListProps = {
   posts: Lists;
   uid: string;
+  addList?: () => void;
 };
 
 const FullList: React.FC<FullListProps> = (props) => {
   return (
     <div>
-      <div className='py-4'>
+      <div className='py-8'>
         <Headline headline='マイリスト' />
       </div>
       {props.posts[0]?.id ? (
@@ -30,8 +32,11 @@ const FullList: React.FC<FullListProps> = (props) => {
           ))}
         </div>
       ) : (
-        <div className='py-12'>
+        <div className='py-8'>
           <Headline headline='まだリストがありません' size='small' />
+          <div className='text-center pt-4'>
+            <Button label='リストを追加する' onClick={props.addList} size='small' />
+          </div>
         </div>
       )}
     </div>
