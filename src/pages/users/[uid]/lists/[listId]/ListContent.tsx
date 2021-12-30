@@ -1,52 +1,10 @@
-import { useRouter } from 'next/dist/client/router';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Headline } from '../../../../../components/atoms/Headline';
-import { db } from '../../../../../libs/firebase';
-import { Params } from '../../../../../types/params';
 import ListContentCard from './ListContentCard';
+import { useListContent } from './useListContent';
 
 export const ListContent: React.FC = () => {
-  const router = useRouter();
-  const { uid, listId } = router.query as Params;
-  const [posts, setPosts] = useState([
-    {
-      restaurantId: '',
-      username: '',
-      timestamp: undefined,
-      imageurl: '',
-      memo: '',
-      url: '',
-      name: '',
-    },
-  ]);
-
-  useEffect(() => {
-    if (uid && listId) {
-      const unSub = db
-        .collection('users')
-        .doc(uid)
-        .collection('lists')
-        .doc(listId)
-        .collection('restaurant')
-        .orderBy('timestamp', 'desc')
-        .onSnapshot((snapshot: { docs: any[] }) =>
-          setPosts(
-            snapshot.docs.map((doc) => ({
-              restaurantId: doc.id,
-              username: doc.data().username,
-              timestamp: doc.data().timestamp,
-              imageurl: doc.data().imageurl,
-              memo: doc.data().memo,
-              url: doc.data().url,
-              name: doc.data().name,
-            })),
-          ),
-        );
-      return () => {
-        unSub();
-      };
-    }
-  }, [listId, uid]);
+  const { posts } = useListContent();
 
   return (
     <div>
