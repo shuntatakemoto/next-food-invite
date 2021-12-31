@@ -3,8 +3,8 @@ import { ReactNode } from 'react';
 import { useSelector } from 'react-redux';
 import { Footer } from '../../../components/organisms/Footer';
 import { Header } from '../../../components/organisms/Header';
-import { selectUser } from '../../../store/user';
 import { auth } from '../../../libs/firebase';
+import { selectUser } from '../../../store/user';
 
 type LayoutProps = {
   children?: ReactNode;
