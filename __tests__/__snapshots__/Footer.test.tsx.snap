@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`is  not signed in 1`] = `
+<DocumentFragment>
+  <div
+    class="flex justify-evenly items-center mt-auto h-16 bg-sub-color"
+  >
+    <div
+      class=""
+    >
+      <span
+        aria-label="🥳, partying_face"
+        class="emoji-mart-emoji"
+      >
+        <span
+          style="width: 32px; height: 32px; display: inline-block; background-image: url(https://unpkg.com/emoji-datasource-apple@5.0.1/img/apple/sheets-256/64.png); background-size: 5700% 5700%; background-position: 75% 14.285714285714286%;"
+        />
+      </span>
+    </div>
+    <div
+      class=""
+    >
+      <span
+        aria-label="🤤, drooling_face"
+        class="emoji-mart-emoji"
+      >
+        <span
+          style="width: 32px; height: 32px; display: inline-block; background-image: url(https://unpkg.com/emoji-datasource-apple@5.0.1/img/apple/sheets-256/64.png); background-size: 5700% 5700%; background-position: 67.85714285714286% 37.5%;"
+        />
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`is signed in 1`] = `
+<DocumentFragment>
+  <div
+    class="flex justify-evenly items-center mt-auto h-16 bg-sub-color"
+  >
+    <p
+      class="text-xl font-bold"
+      href="/"
+    >
+      Home
+    </p>
+    <button
+      class="text-xl font-bold"
+    >
+      Logout
+    </button>
+  </div>
+</DocumentFragment>
+`;

@@ -1,13 +1,13 @@
 import { Emoji } from 'emoji-mart';
 import Link from 'next/link';
 import React from 'react';
-import { auth } from '../../../libs/firebase';
 
 export type FooterProps = {
   isSignedIn?: boolean;
+  signOut?: () => void;
 };
 
-export const Footer: React.FC<FooterProps> = ({ isSignedIn }) => {
+export const Footer: React.FC<FooterProps> = ({ isSignedIn, signOut }) => {
   return (
     <div className='flex justify-evenly items-center mt-auto h-16 bg-sub-color'>
       {isSignedIn ? (
@@ -21,7 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ isSignedIn }) => {
       )}
 
       {isSignedIn ? (
-        <button onClick={() => auth.signOut()} className='text-xl font-bold'>
+        <button onClick={signOut} className='text-xl font-bold'>
           Logout
         </button>
       ) : (
