@@ -1,6 +1,7 @@
 import { GetServerSideProps } from 'next';
 import React from 'react';
 import Layout from '../../../../../components/templates/layout';
+import { useModal } from '../../../../../hooks/useModal';
 import { db } from '../../../../../libs/firebase';
 import { Params } from '../../../../../types/params';
 import { ListContent } from './ListContent';
@@ -14,19 +15,10 @@ type Props = {
 
 const ListPage: React.FC<Props> = (props) => {
   const { listName } = props;
-  const {
-    user,
-    post,
-    addLink,
-    openModal,
-    modalIsOpen,
-    closeModal,
-    DmLink,
-    bookmark,
-    deleteList,
-    shareUrl,
-  } = useList();
+  const { user, post, addLink, DmLink, bookmark, deleteList, shareUrl } = useList();
   const { posts } = useListContent();
+
+  const { isOpen, open, close } = useModal();
 
   return (
     <Layout
@@ -37,9 +29,9 @@ const ListPage: React.FC<Props> = (props) => {
           user={user}
           post={post}
           addLink={addLink}
-          openModal={openModal}
-          modalIsOpen={modalIsOpen}
-          closeModal={closeModal}
+          openModal={open}
+          modalIsOpen={isOpen}
+          closeModal={close}
           DmLink={DmLink}
           bookmark={bookmark}
           deleteList={deleteList}

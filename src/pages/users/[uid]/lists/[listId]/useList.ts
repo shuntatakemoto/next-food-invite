@@ -22,7 +22,6 @@ export const useList = () => {
   const user = useSelector(selectUser);
   const router = useRouter();
   const { uid, listId } = router.query as Params;
-  const [modalIsOpen, setIsOpen] = useState(false);
 
   const [post, setPost] = useState<ListsProps>({
     userid: '',
@@ -34,14 +33,6 @@ export const useList = () => {
     emojiname: '',
     listurl: '',
   });
-
-  const openModal = () => {
-    setIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsOpen(false);
-  };
 
   useEffect(() => {
     if (uid && listId) {
@@ -102,9 +93,6 @@ export const useList = () => {
   return {
     user,
     post,
-    openModal,
-    closeModal,
-    modalIsOpen,
     deleteList,
     addLink,
     DmLink,
