@@ -11,11 +11,11 @@ const CreateList: React.FC = () => {
 
   return (
     <Layout>
-      <main className='flex flex-col bg-main-color'>
+      <main className='flex flex-col text-center bg-main-color'>
         <div className='py-4'>
           <Headline headline='リストを作成' />
         </div>
-        <form onSubmit={createList} className='pl-5 '>
+        <form onSubmit={createList}>
           <TextField
             label='リスト名'
             placeholder='行きたい飲食店リスト'
