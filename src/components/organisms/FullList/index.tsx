@@ -17,7 +17,7 @@ const FullList: React.FC<FullListProps> = (props) => {
         <Headline headline='マイリスト' />
       </div>
       {props.posts[0]?.id ? (
-        <div className='grid grid-cols-2 text-center xl:grid-cols-4'>
+        <div className='grid grid-cols-2 text-center xl:grid-cols-3'>
           {props.posts.map((post) => (
             <FullPost
               key={post.id}

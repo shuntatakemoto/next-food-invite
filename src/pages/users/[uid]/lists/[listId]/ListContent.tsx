@@ -18,7 +18,7 @@ export const ListContent: React.FC<ListContentProps> = (props) => {
   return (
     <div>
       {props.posts[0]?.name ? (
-        <div className='grid grid-cols-2 text-center xl:grid-cols-4'>
+        <div className='grid grid-cols-2 text-center xl:grid-cols-3'>
           {props.posts.map((post) => (
             <ListContentCard
               key={post.name}

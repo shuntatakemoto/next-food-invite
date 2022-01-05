@@ -11,8 +11,10 @@ const MyPage: React.FC = () => {
 
   return (
     <Layout>
-      <main className='flex flex-col bg-main-color'>
-        <Profile userInfo={userInfo} />
+      <main className='flex flex-col bg-main-color xl:px-48'>
+        <div className='pl-4 xl:pl-6'>
+          <Profile userInfo={userInfo} />
+        </div>
         <FullList posts={posts} uid={uid} addList={addList} />
       </main>
     </Layout>

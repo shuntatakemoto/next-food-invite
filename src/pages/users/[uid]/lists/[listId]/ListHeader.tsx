@@ -24,7 +24,7 @@ type ListsHeaderProps = {
 
 export const ListHeader: React.FC<ListsHeaderProps> = (props) => {
   return (
-    <div className='pt-5 '>
+    <div className='pt-5 pl-4 xl:pl-6'>
       <SubProfile avatar={props.post.avatar} username={props.post.username} />
       <div className='mb-6'>
         <div className='py-10 text-center'>

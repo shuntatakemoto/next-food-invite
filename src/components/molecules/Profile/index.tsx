@@ -21,14 +21,16 @@ export const Profile: React.FC<ProfileProps> = (props) => {
           priority={true}
         />
       )}
-      <p className='text-2xl font-bold'>
-        {props.userInfo.username ? props.userInfo.username : 'NO NAME'}
-      </p>
-      <Link href={`https://twitter.com/intent/user?user_id=${props.userInfo.twitterid}`} passHref>
-        <div>
-          <TwitterIcon size={32} round={true} />
-        </div>
-      </Link>
+      <div className='flex'>
+        <p className='text-2xl font-bold'>
+          {props.userInfo.username ? props.userInfo.username : 'NO NAME'}
+        </p>
+        <Link href={`https://twitter.com/intent/user?user_id=${props.userInfo.twitterid}`} passHref>
+          <div className='pl-4'>
+            <TwitterIcon size={32} round={true} />
+          </div>
+        </Link>
+      </div>
     </div>
   );
 };
