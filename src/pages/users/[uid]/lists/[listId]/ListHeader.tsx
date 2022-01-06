@@ -20,6 +20,7 @@ type ListsHeaderProps = {
   bookmark: () => void;
   deleteList: () => void;
   shareUrl: string;
+  openMobileShare: () => void;
 };
 
 export const ListHeader: React.FC<ListsHeaderProps> = (props) => {
@@ -41,7 +42,12 @@ export const ListHeader: React.FC<ListsHeaderProps> = (props) => {
             )}
           </div>
           <div className='mb-2'>
-            <Button label='シェアする' onClick={props.openModal} />
+            {(navigator.share as unknown) ? (
+              <Button label='シェアする' onClick={props.openMobileShare} />
+            ) : (
+              <Button label='シェアする' onClick={props.openModal} />
+            )}
+
             <Modal
               isOpen={props.modalIsOpen}
               onRequestClose={props.closeModal}
@@ -57,8 +63,8 @@ export const ListHeader: React.FC<ListsHeaderProps> = (props) => {
                 content: {
                   position: 'absolute',
                   top: '35%',
-                  left: '40px',
-                  right: '40px',
+                  left: '30%',
+                  right: '30%',
                   bottom: '40%',
                   border: '1px solid #ccc',
                   background: '#fff',

@@ -15,7 +15,8 @@ type Props = {
 
 const ListPage: React.FC<Props> = (props) => {
   const { listName } = props;
-  const { user, post, addLink, DmLink, bookmark, deleteList, shareUrl } = useList();
+  const { user, post, addLink, DmLink, bookmark, deleteList, shareUrl, openMobileShare } =
+    useList();
   const { posts } = useListContent();
 
   const { isOpen, open, close } = useModal();
@@ -36,6 +37,7 @@ const ListPage: React.FC<Props> = (props) => {
           bookmark={bookmark}
           deleteList={deleteList}
           shareUrl={shareUrl}
+          openMobileShare={openMobileShare}
         />
         <ListContent posts={posts} />
       </main>
