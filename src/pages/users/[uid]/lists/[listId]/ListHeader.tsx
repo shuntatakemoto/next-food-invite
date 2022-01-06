@@ -23,7 +23,7 @@ type ListsHeaderProps = {
   openMobileShare: () => void;
 };
 
-export const ListHeader: React.FC<ListsHeaderProps> = (props) => {
+const ListHeader: React.FC<ListsHeaderProps> = (props) => {
   return (
     <div className='pt-5 pl-4 xl:pl-6'>
       <SubProfile avatar={props.post.avatar} username={props.post.username} />
@@ -42,7 +42,7 @@ export const ListHeader: React.FC<ListsHeaderProps> = (props) => {
             )}
           </div>
           <div className='mb-2'>
-            {(navigator.share as unknown) ? (
+            {navigator && (navigator.share as unknown) ? (
               <Button label='シェアする' onClick={props.openMobileShare} />
             ) : (
               <Button label='シェアする' onClick={props.openModal} />
@@ -103,3 +103,4 @@ export const ListHeader: React.FC<ListsHeaderProps> = (props) => {
     </div>
   );
 };
+export default ListHeader;

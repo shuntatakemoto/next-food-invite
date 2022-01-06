@@ -1,17 +1,21 @@
 import { GetServerSideProps } from 'next';
+import dynamic from 'next/dynamic';
 import React from 'react';
 import Layout from '../../../../../components/templates/layout';
 import { useModal } from '../../../../../hooks/useModal';
 import { db } from '../../../../../libs/firebase';
 import { Params } from '../../../../../types/params';
 import { ListContent } from './ListContent';
-import { ListHeader } from './ListHeader';
 import { useList } from './useList';
 import { useListContent } from './useListContent';
 
 type Props = {
   listName: string;
 };
+
+const ListHeader = dynamic(() => import('./ListHeader'), {
+  ssr: false,
+});
 
 const ListPage: React.FC<Props> = (props) => {
   const { listName } = props;

@@ -90,15 +90,18 @@ export const useList = () => {
     });
   };
 
-  const openMobileShare = () =>
-    navigator
-      .share({
-        title: post.listname,
-        url: shareUrl,
-      })
-      .then(() => {
-        // success!
-      });
+  const openMobileShare = () => {
+    if (navigator && (navigator.share as unknown)) {
+      navigator
+        .share({
+          title: post.listname,
+          url: shareUrl,
+        })
+        .then(() => {
+          console.log('openMobileShare is successful');
+        });
+    }
+  };
 
   return {
     user,
