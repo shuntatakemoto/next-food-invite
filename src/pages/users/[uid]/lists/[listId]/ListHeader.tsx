@@ -42,7 +42,12 @@ export const ListHeader: React.FC<ListsHeaderProps> = (props) => {
             )}
           </div>
           <div className='mb-2'>
-            <Button label='シェアする' onClick={props.openModal} />
+            {(navigator.share as unknown) ? (
+              <Button label='シェアする' onClick={props.openMobileShare} />
+            ) : (
+              <Button label='シェアする' onClick={props.openModal} />
+            )}
+
             <Modal
               isOpen={props.modalIsOpen}
               onRequestClose={props.closeModal}
