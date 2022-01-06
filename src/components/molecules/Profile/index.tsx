@@ -10,7 +10,7 @@ export type ProfileProps = {
 
 export const Profile: React.FC<ProfileProps> = (props) => {
   return (
-    <div className='mt-5'>
+    <div>
       {props.userInfo.avatar && (
         <Image
           src={props.userInfo.avatar.replace('normal', '200x200')}

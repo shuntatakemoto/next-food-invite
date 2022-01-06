@@ -6,7 +6,7 @@ import { BookmarkList } from './BookmarkList';
 const BookmarkPage: React.FC = () => {
   return (
     <Layout>
-      <main className='flex flex-col bg-main-color xl:px-48'>
+      <main className='flex flex-col bg-main-color md:px-24 xl:px-60'>
         <div className='py-5'>
           <Headline headline='ブックマーク' />
         </div>

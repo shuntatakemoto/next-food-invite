@@ -24,7 +24,7 @@ const ListPage: React.FC<Props> = (props) => {
     <Layout
       image={`https://res.cloudinary.com/dhho8x7av/image/upload/l_text:Sawarabi%20Gothic_50_bold:${listName},co_rgb:333,w_800,c_fit/v1639747883/ogp_v2pkyb.png`}
     >
-      <main className='flex flex-col bg-main-color xl:px-48'>
+      <main className='flex flex-col bg-main-color md:px-24 xl:px-60'>
         <ListHeader
           user={user}
           post={post}
