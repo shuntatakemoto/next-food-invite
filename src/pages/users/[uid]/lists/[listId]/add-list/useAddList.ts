@@ -39,6 +39,8 @@ export const useAddList = () => {
       const uploadImg = storage.ref(`${uid}/${fileName}`).put(uploadImage);
       uploadImg.on(
         firebase.storage.TaskEvent.STATE_CHANGED,
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        () => {},
         (err) => {
           alert(err);
         },
