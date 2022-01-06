@@ -90,6 +90,16 @@ export const useList = () => {
     });
   };
 
+  const openMobileShare = () =>
+    navigator
+      .share({
+        title: post.listname,
+        url: shareUrl,
+      })
+      .then(() => {
+        // success!
+      });
+
   return {
     user,
     post,
@@ -98,5 +108,6 @@ export const useList = () => {
     DmLink,
     bookmark,
     shareUrl,
+    openMobileShare,
   };
 };

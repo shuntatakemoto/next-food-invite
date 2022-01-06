@@ -20,6 +20,7 @@ type ListsHeaderProps = {
   bookmark: () => void;
   deleteList: () => void;
   shareUrl: string;
+  openMobileShare: () => void;
 };
 
 export const ListHeader: React.FC<ListsHeaderProps> = (props) => {
@@ -57,8 +58,8 @@ export const ListHeader: React.FC<ListsHeaderProps> = (props) => {
                 content: {
                   position: 'absolute',
                   top: '35%',
-                  left: '40px',
-                  right: '40px',
+                  left: '30%',
+                  right: '30%',
                   bottom: '40%',
                   border: '1px solid #ccc',
                   background: '#fff',
