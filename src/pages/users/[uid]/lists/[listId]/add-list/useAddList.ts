@@ -18,8 +18,8 @@ export const useAddList = () => {
   const [fileUrl, setFileUrl] = useState<any>(null);
 
   const onChangeImageHandler = (e: any) => {
-    if (e.target.files![0]) {
-      setUploadImage(e.target.files![0]);
+    if (e.target.files?.[0]) {
+      setUploadImage(e.target.files?.[0]);
       const imageFile = e.target.files[0];
       const imageUrl = URL.createObjectURL(imageFile);
       setFileUrl(imageUrl);

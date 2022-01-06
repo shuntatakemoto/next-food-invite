@@ -56,7 +56,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   await docRef.get().then((doc) => {
     if (doc.exists) {
       const docData = doc.data();
-      listName = docData!['listname'];
+      listName = docData?.['listname'];
     }
   });
 
