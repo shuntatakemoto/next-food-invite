@@ -70,8 +70,8 @@ const AddList: React.FC<AddListProps> = () => {
             </div>
 
             <TextField
-              label='メモ'
-              placeholder='メモを入力'
+              label='メモ(任意)'
+              placeholder='(例) 唐揚げがおすすめ'
               multiline
               fullWidth
               margin='normal'
@@ -81,8 +81,8 @@ const AddList: React.FC<AddListProps> = () => {
             />
 
             <TextField
-              label='URL'
-              placeholder='店情報のあるURLを入力'
+              label='URL(任意)'
+              placeholder='(例) instagram,ホームページなどのURL'
               multiline
               fullWidth
               margin='normal'
