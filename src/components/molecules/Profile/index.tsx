@@ -23,7 +23,7 @@ export const Profile: React.FC<ProfileProps> = (props) => {
       )}
       <div className='flex'>
         <p className='text-2xl font-bold'>
-          {props.userInfo.username ? props.userInfo.username : 'NO NAME'}
+          {props.userInfo.username ? props.userInfo.username : ''}
         </p>
         <Link href={`https://twitter.com/intent/user?user_id=${props.userInfo.twitterid}`} passHref>
           <div className='pl-4'>

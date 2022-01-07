@@ -20,7 +20,7 @@ export const SubProfile: React.FC<SubProfileProps> = (props) => {
           />
         )}
       </div>
-      <p>Created by {props.username ? props.username : 'NO NAME'}</p>
+      <p>Created by {props.username ? props.username : ''}</p>
     </div>
   );
 };
