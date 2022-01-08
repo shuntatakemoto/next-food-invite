@@ -14,7 +14,7 @@ https://food-invite.vercel.app/ <br>
 
 上記の問題を解決したい<br>
 
-## 主な機能
+## 主な使い方
 
 ![説明スライド１](public/explanation-slide-1.jpeg)
 ![説明スライド2](public/explanation-slide-2.jpeg)
