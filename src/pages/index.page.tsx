@@ -25,10 +25,10 @@ const Home: NextPage = () => {
       <Layout>
         <main className='bg-main-color'>
           <div className='pt-16 text-center md:flex'>
-            <div className='flex justify-end pr-8 md:w-1/2'>
+            <div className='md:flex md:justify-end md:pr-8 md:w-1/2'>
               <div>
                 <h2 className='py-4 text-5xl font-bold md:pt-20'>Food Invite</h2>
-                <p>知り合いと外食に行きやすくなるアプリ</p>
+                <p className=''>知り合いと外食に行きやすくなるアプリ</p>
               </div>
             </div>
             <div className='py-8 md:flex md:justify-start md:pl-16 md:m-auto md:w-1/2'>
@@ -99,7 +99,7 @@ const Home: NextPage = () => {
                 外食の際、食べログで上位の店に行くのではなく、知り合いがお勧めする店に行きたい＆知り合いのおすすめの店を知りたい
               </p>
               <br />
-              <p>上記の問題を解決するしたい</p>
+              <p>上記の問題を解決するため開発しました</p>
             </div>
           </div>
 
