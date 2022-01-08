@@ -15,7 +15,7 @@ type LayoutProps = {
 const Layout = ({
   children,
   title = 'Food Invite',
-  description = '知り合いをご飯に誘うハードルを下げることを目的としたアプリです',
+  description = '知り合いと外食に行きやすくなるアプリ',
   image = 'https://food-invite.vercel.app/default.png',
 }: LayoutProps) => {
   const user = useSelector(selectUser);
