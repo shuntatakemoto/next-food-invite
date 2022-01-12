@@ -12,6 +12,7 @@
     "plugin:tailwindcss/recommended"
   ],
   "rules": {
+    "no-console": ["error", { "allow": ["warn", "info", "error"] }],
     "import/order": [
       "error",
       {
