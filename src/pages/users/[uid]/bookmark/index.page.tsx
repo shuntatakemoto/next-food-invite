@@ -1,7 +1,7 @@
 import React from 'react';
-import { Headline } from '../../../../components/atoms/Headline';
-import Layout from '../../../../components/templates/layout';
 import { BookmarkList } from './BookmarkList';
+import { Headline } from '@/components/atoms/Headline';
+import Layout from '@/components/templates/layout';
 
 const BookmarkPage: React.FC = () => {
   return (

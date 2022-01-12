@@ -1,8 +1,8 @@
 import { useRouter } from 'next/dist/client/router';
 import { useState, useEffect } from 'react';
-import { db } from '../libs/firebase';
-import { Lists } from '../types/lists';
-import { Params } from '../types/params';
+import { db } from '@/libs/firebase';
+import { Lists } from '@/types/lists';
+import { Params } from '@/types/params';
 
 export const useFullList = () => {
   const router = useRouter();

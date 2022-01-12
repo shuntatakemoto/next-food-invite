@@ -1,6 +1,6 @@
 import React from 'react';
-import { Headline } from '../../../../../components/atoms/Headline';
 import ListContentCard from './ListContentCard';
+import { Headline } from '@/components/atoms/Headline';
 
 type ListContentProps = {
   posts: {

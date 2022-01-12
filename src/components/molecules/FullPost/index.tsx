@@ -3,7 +3,7 @@ import { Emoji } from 'emoji-mart';
 import firebase from 'firebase/app';
 import Link from 'next/link';
 import React from 'react';
-import { db } from '../../../libs/firebase';
+import { db } from '@/libs/firebase';
 
 export type FullPostProps = {
   id?: string;

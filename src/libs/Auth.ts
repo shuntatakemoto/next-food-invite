@@ -1,9 +1,9 @@
 import firebase from 'firebase/app';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useJudgeLogin } from '../hooks/useJudgeLogin';
-import { login, logout, selectUser } from '../store/user';
 import { auth, db } from './firebase';
+import { useJudgeLogin } from '@/hooks/useJudgeLogin';
+import { login, logout, selectUser } from '@/store/user';
 
 export const Auth = ({ children }: any) => {
   const user = useSelector(selectUser);

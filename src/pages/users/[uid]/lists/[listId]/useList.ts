@@ -2,9 +2,9 @@ import firebase from 'firebase/app';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { db } from '../../../../../libs/firebase';
-import { selectUser } from '../../../../../store/user';
-import { Params } from '../../../../../types/params';
+import { db } from '@/libs/firebase';
+import { selectUser } from '@/store/user';
+import { Params } from '@/types/params';
 
 export type ListsProps = {
   userid: string;
