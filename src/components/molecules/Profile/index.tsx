@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { TwitterIcon } from 'react-share';
-import { User } from '../../../types/user';
+import { User } from '@/types/user';
 
 export type ProfileProps = {
   userInfo: User;

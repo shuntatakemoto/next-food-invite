@@ -3,8 +3,8 @@ import { Params } from 'next/dist/server/router';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { storage, db } from '../../../../../../libs/firebase';
-import { selectUser } from '../../../../../../store/user';
+import { storage, db } from '@/libs/firebase';
+import { selectUser } from '@/store/user';
 
 export const useAddList = () => {
   const user = useSelector(selectUser);

@@ -1,6 +1,6 @@
 import React from 'react';
-import Layout from '../../../../../../../components/templates/layout';
 import { RestaurantContent } from '../RestaurantContent';
+import Layout from '@/components/templates/layout';
 
 const RestaurantPage: React.FC = () => {
   return (

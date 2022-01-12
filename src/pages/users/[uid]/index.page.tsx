@@ -1,9 +1,9 @@
 import React from 'react';
-import { Profile } from '../../../components/molecules/Profile';
-import FullList from '../../../components/organisms/FullList';
-import Layout from '../../../components/templates/layout';
-import { useFullList } from '../../../hooks/useFullList';
-import { useUser } from '../../../hooks/useUser';
+import { Profile } from '@/components/molecules/Profile';
+import FullList from '@/components/organisms/FullList';
+import Layout from '@/components/templates/layout';
+import { useFullList } from '@/hooks/useFullList';
+import { useUser } from '@/hooks/useUser';
 
 const MyPage: React.FC = () => {
   const { uid, addList, posts } = useFullList();

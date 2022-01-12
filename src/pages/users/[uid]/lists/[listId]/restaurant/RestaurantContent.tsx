@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
-import { Button } from '../../../../../../components/atoms/Button';
-import { Headline } from '../../../../../../components/atoms/Headline';
 import { useRestaurant } from './useRestaurant';
+import { Button } from '@/components/atoms/Button';
+import { Headline } from '@/components/atoms/Headline';
 
 export const RestaurantContent: React.FC = () => {
   const { user, posts, RestaurantLink, deleteItem } = useRestaurant();

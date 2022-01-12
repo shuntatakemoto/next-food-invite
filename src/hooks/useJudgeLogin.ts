@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { selectUser } from '../store/user/index';
+import { selectUser } from '@/store/user/index';
 
 export const useJudgeLogin = () => {
   const user = useSelector(selectUser);

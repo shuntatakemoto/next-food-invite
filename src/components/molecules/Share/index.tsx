@@ -7,7 +7,7 @@ import {
   HatenaIcon,
   HatenaShareButton,
 } from 'react-share';
-import { Button } from '../../atoms/Button';
+import { Button } from '@/components/atoms/Button';
 
 export type ShareProps = {
   text: string;

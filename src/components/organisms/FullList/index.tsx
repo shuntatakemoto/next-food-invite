@@ -1,8 +1,8 @@
 import React from 'react';
-import { Lists } from '../../../types/lists';
-import { Button } from '../../atoms/Button';
-import { Headline } from '../../atoms/Headline';
-import FullPost from '../../molecules/FullPost';
+import { Button } from '@/components/atoms/Button';
+import { Headline } from '@/components/atoms/Headline';
+import FullPost from '@/components/molecules/FullPost';
+import { Lists } from '@/types/lists';
 
 export type FullListProps = {
   posts: Lists;
