@@ -16,7 +16,6 @@ export const SubProfile: React.FC<SubProfileProps> = (props) => {
             alt='Profile Image'
             width='160'
             height='160'
-            priority={true}
           />
         )}
       </div>

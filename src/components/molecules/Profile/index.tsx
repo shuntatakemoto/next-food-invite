@@ -18,7 +18,6 @@ export const Profile: React.FC<ProfileProps> = (props) => {
           className='rounded-3xl'
           width='160'
           height='160'
-          priority={true}
         />
       )}
       <div className='flex'>
