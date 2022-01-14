@@ -41,7 +41,7 @@ export const Auth = ({ children }: any) => {
         twitterid: user.twitterUid,
       });
     }
-  }, [user.uid]);
+  }, [user.displayName, user.photoUrl, user.twitterUid, user.uid]);
 
   return children;
 };
