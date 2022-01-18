@@ -5,4 +5,5 @@ export type User = {
   timestamp?: undefined;
   userid: string;
   twitterid: string;
+  newAvatar?: string;
 };

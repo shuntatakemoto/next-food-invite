@@ -1,13 +1,17 @@
 import firebase from 'firebase/app';
-import { useEffect } from 'react';
+import { useRouter } from 'next/dist/client/router';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth, db } from './firebase';
 import { useJudgeLogin } from '@/hooks/useJudgeLogin';
 import { login, logout, selectUser } from '@/store/user';
+import { Params } from '@/types/params';
 
 export const Auth = ({ children }: any) => {
   const user = useSelector(selectUser);
-
+  const [isFirst, setIsFirst] = useState<boolean | null>(null);
+  const router = useRouter();
+  const { uid } = router.query as Params;
   useJudgeLogin();
 
   const dispatch = useDispatch();
@@ -31,9 +35,30 @@ export const Auth = ({ children }: any) => {
     };
   }, [dispatch]);
 
+  useLayoutEffect(() => {
+    const docRef = db.collection('users').doc(uid);
+    docRef.get().then((doc: any) => {
+      if (doc.exists) {
+        setIsFirst(false);
+      }
+      if (!doc.exists) {
+        setIsFirst(true);
+      }
+    });
+  }, [user.uid]);
+
   useEffect(() => {
-    if (user.uid) {
+    if (user.uid && isFirst) {
       db.collection('users').doc(user.uid).set({
+        avatar: '',
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        username: '',
+        userid: '',
+        twitterid: '',
+      });
+    }
+    if (user.uid && isFirst) {
+      db.collection('users').doc(user.uid).update({
         avatar: user.photoUrl,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         username: user.displayName,
@@ -41,7 +66,7 @@ export const Auth = ({ children }: any) => {
         twitterid: user.twitterUid,
       });
     }
-  }, [user.displayName, user.photoUrl, user.twitterUid, user.uid]);
+  }, [user.uid]);
 
   return children;
 };
