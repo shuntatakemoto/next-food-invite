@@ -14,6 +14,7 @@ export const useUser = () => {
     timestamp: undefined,
     userid: '',
     twitterid: '',
+    newAvatar: '',
   });
 
   useEffect(() => {
