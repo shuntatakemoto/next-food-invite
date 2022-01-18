@@ -6,6 +6,7 @@ import { Button } from '@/components/atoms/Button';
 import { Headline } from '@/components/atoms/Headline';
 import { Share } from '@/components/molecules/Share';
 import { SubProfile } from '@/components/molecules/SubProfile';
+import { User } from '@/types/user';
 
 Modal.setAppElement('#__next');
 
@@ -21,12 +22,17 @@ type ListsHeaderProps = {
   deleteList: () => void;
   shareUrl: string;
   openMobileShare: () => void;
+  userInfo: User;
 };
 
 const ListHeader: React.FC<ListsHeaderProps> = (props) => {
   return (
     <div className='pt-5 pl-4 xl:pl-6'>
-      <SubProfile avatar={props.post.avatar} username={props.post.username} />
+      <SubProfile
+        avatar={props.post.avatar}
+        username={props.post.username}
+        userInfo={props.userInfo}
+      />
       <div className='mb-6'>
         <div className='py-10 text-center'>
           {props.post.emojiname && <Emoji emoji={props.post.emojiname} size={64} set='twitter' />}

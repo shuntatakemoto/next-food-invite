@@ -6,6 +6,7 @@ import { useList } from './useList';
 import { useListContent } from './useListContent';
 import Layout from '@/components/templates/layout';
 import { useModal } from '@/hooks/useModal';
+import { useUser } from '@/hooks/useUser';
 import { db } from '@/libs/firebase';
 import { Params } from '@/types/params';
 
@@ -22,7 +23,7 @@ const ListPage: React.FC<Props> = (props) => {
   const { user, post, addLink, DmLink, bookmark, deleteList, shareUrl, openMobileShare } =
     useList();
   const { posts } = useListContent();
-
+  const { userInfo } = useUser();
   const { isOpen, open, close } = useModal();
 
   return (
@@ -42,6 +43,7 @@ const ListPage: React.FC<Props> = (props) => {
           deleteList={deleteList}
           shareUrl={shareUrl}
           openMobileShare={openMobileShare}
+          userInfo={userInfo}
         />
         <ListContent posts={posts} />
       </main>
