@@ -63,15 +63,17 @@ export const Profile: React.FC<ProfileProps> = (props) => {
             <TwitterIcon size={32} round={true} />
           </div>
         </Link>
-        <div className='pl-4'>
-          {user.uid && profileImage && <button onClick={changeProfile}>変更する</button>}
-          {user.uid && !profileImage && (
-            <label htmlFor='addPhoto'>
-              <span className='pr-5'>プロフィール画像変更</span>
-              <input className='hidden' id='addPhoto' type='file' onChange={onChangeImageHandler} />
-            </label>
-          )}
-        </div>
+      </div>
+      <div className='pt-4'>
+        {user.uid && profileImage && <button onClick={changeProfile}>変更する</button>}
+        {user.uid && !profileImage && (
+          <label htmlFor='addPhoto'>
+            <span className='py-2 px-5 w-48 font-bold text-gray-600 bg-transparent rounded-full shadow-inner'>
+              プロフィール画像変更
+            </span>
+            <input className='hidden' id='addPhoto' type='file' onChange={onChangeImageHandler} />
+          </label>
+        )}
       </div>
     </div>
   );
