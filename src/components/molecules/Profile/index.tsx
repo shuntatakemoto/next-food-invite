@@ -66,7 +66,7 @@ export const Profile: React.FC<ProfileProps> = (props) => {
       </div>
       <div className='pt-4'>
         {user.uid && profileImage && <button onClick={changeProfile}>変更する</button>}
-        {user.uid && !profileImage && (
+        {user.uid == props.userInfo.userid && !profileImage && (
           <label htmlFor='addPhoto'>
             <span className='py-2 px-5 w-48 font-bold text-gray-600 bg-transparent rounded-full shadow-inner'>
               プロフィール画像変更
