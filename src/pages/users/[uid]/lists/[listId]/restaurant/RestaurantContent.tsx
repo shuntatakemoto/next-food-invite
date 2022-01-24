@@ -5,7 +5,7 @@ import { Button } from '@/components/atoms/Button';
 import { Headline } from '@/components/atoms/Headline';
 
 export const RestaurantContent: React.FC = () => {
-  const { user, posts, RestaurantLink, deleteItem } = useRestaurant();
+  const { uid, user, posts, RestaurantLink, deleteItem } = useRestaurant();
 
   return (
     <div className='flex-1 text-center'>
@@ -31,7 +31,7 @@ export const RestaurantContent: React.FC = () => {
         <p>added by {posts?.username}</p>
       </div>
       <div className='text-center '>
-        {user.uid && <Button label='この店を削除する' onClick={deleteItem} primary={true} />}
+        {user.uid == uid && <Button label='この店を削除する' onClick={deleteItem} primary={true} />}
       </div>
     </div>
   );

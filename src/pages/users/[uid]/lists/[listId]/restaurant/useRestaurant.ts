@@ -46,6 +46,7 @@ export const useRestaurant = () => {
     router.replace(`/users/${uid}/lists/${listId}`);
   };
   return {
+    uid,
     user,
     posts,
     RestaurantLink,
