@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
 import { useRouter } from 'next/dist/client/router';
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth, db } from './firebase';
 import { useJudgeLogin } from '@/hooks/useJudgeLogin';
@@ -9,7 +9,6 @@ import { Params } from '@/types/params';
 
 export const Auth = ({ children }: any) => {
   const user = useSelector(selectUser);
-  const [isFirst, setIsFirst] = useState<boolean | null>(null);
   const router = useRouter();
   const { uid } = router.query as Params;
   useJudgeLogin();
@@ -35,38 +34,30 @@ export const Auth = ({ children }: any) => {
     };
   }, [dispatch]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const docRef = db.collection('users').doc(uid);
     docRef.get().then((doc: any) => {
-      if (doc.exists) {
-        setIsFirst(false);
-      }
-      if (!doc.exists) {
-        setIsFirst(true);
+      if (user.uid) {
+        if (!doc.exists) {
+          db.collection('users').doc(user.uid).set({
+            avatar: '',
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            username: '',
+            userid: '',
+            twitterid: '',
+          });
+        } else {
+          db.collection('users').doc(user.uid).update({
+            avatar: user.photoUrl,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            username: user.displayName,
+            userid: user.uid,
+            twitterid: user.twitterUid,
+          });
+        }
       }
     });
-  }, [user.uid]);
-
-  useEffect(() => {
-    if (user.uid && isFirst) {
-      db.collection('users').doc(user.uid).set({
-        avatar: '',
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        username: '',
-        userid: '',
-        twitterid: '',
-      });
-    }
-    if (user.uid && isFirst) {
-      db.collection('users').doc(user.uid).update({
-        avatar: user.photoUrl,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        username: user.displayName,
-        userid: user.uid,
-        twitterid: user.twitterUid,
-      });
-    }
-  }, [user.uid]);
+  }, []);
 
   return children;
 };
