@@ -13,7 +13,7 @@ export const RestaurantContent: React.FC = () => {
         <Headline headline={posts?.name} />
       </div>
       <p className='pb-4 text-center'>{posts?.memo}</p>
-      <Button label='詳しい店情報' onClick={RestaurantLink} />
+      {posts?.url && <Button label='詳しい店情報' onClick={RestaurantLink} />}
 
       <div className='mt-7'>
         {posts?.imageurl && (
