@@ -1,3 +1,4 @@
+import firebase from 'firebase/app';
 import { useRouter } from 'next/dist/client/router';
 import { useState, useEffect } from 'react';
 import { db } from '@/libs/firebase';
@@ -27,7 +28,7 @@ export const useBookmarkList = () => {
         .doc(uid)
         .collection('bookmark')
         .orderBy('timestamp', 'desc')
-        .onSnapshot((snapshot: { docs: any[] }) =>
+        .onSnapshot((snapshot: { docs: firebase.firestore.DocumentData[] }) =>
           setPosts(
             snapshot.docs.map((doc) => ({
               id: doc.id,

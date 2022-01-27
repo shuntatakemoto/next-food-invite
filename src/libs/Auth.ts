@@ -40,7 +40,7 @@ export const Auth = ({ children }: Props) => {
 
   useEffect(() => {
     const docRef = db.collection('users').doc(uid);
-    docRef.get().then((doc: any) => {
+    docRef.get().then((doc: firebase.firestore.DocumentData) => {
       if (user.uid) {
         if (!doc.exists) {
           db.collection('users').doc(user.uid).set({

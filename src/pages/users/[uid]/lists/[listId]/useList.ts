@@ -41,7 +41,7 @@ export const useList = () => {
         .collection('lists')
         .doc(listId)
         .get()
-        .then((doc: any) => setPost(doc.data()));
+        .then((doc: firebase.firestore.DocumentData) => setPost(doc.data()));
     }
   }, [listId, uid]);
 

@@ -1,3 +1,4 @@
+import firebase from 'firebase/app';
 import { useRouter } from 'next/dist/client/router';
 import { useState, useEffect } from 'react';
 import { db } from '@/libs/firebase';
@@ -20,7 +21,7 @@ export const useUser = () => {
   useEffect(() => {
     if (uid) {
       const docRef = db.collection('users').doc(uid);
-      docRef.get().then((doc: any) => {
+      docRef.get().then((doc: firebase.firestore.DocumentData) => {
         if (doc.exists) {
           setUserInfo(doc.data());
         }
