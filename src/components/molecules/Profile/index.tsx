@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { TwitterIcon } from 'react-share';
+import { Button } from '@/components/atoms/Button';
 import { db, storage } from '@/libs/firebase';
 import { selectUser } from '@/store/user';
 import { User } from '@/types/user';
@@ -65,7 +66,7 @@ export const Profile: React.FC<ProfileProps> = (props) => {
         </Link>
       </div>
       <div className='pt-4'>
-        {user.uid && profileImage && <button onClick={changeProfile}>変更する</button>}
+        {user.uid && profileImage && <Button label='変更する' onClick={changeProfile} />}
         {user.uid == props.userInfo.userid && !profileImage && (
           <label htmlFor='addPhoto'>
             <span className='py-2 px-5 w-48 font-bold text-gray-600 bg-transparent rounded-full shadow-inner'>
