@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
 import { useRouter } from 'next/dist/client/router';
-import { useEffect, ReactNode } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth, db } from './firebase';
 import { useJudgeLogin } from '@/hooks/useJudgeLogin';
@@ -8,7 +8,7 @@ import { login, logout, selectUser } from '@/store/user';
 import { Params } from '@/types/params';
 
 type Props = {
-  children: ReactNode;
+  children: JSX.Element;
 };
 
 export const Auth = ({ children }: Props) => {
