@@ -1,13 +1,17 @@
 import firebase from 'firebase/app';
 import { useRouter } from 'next/dist/client/router';
-import { useEffect } from 'react';
+import { useEffect, ReactNode } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth, db } from './firebase';
 import { useJudgeLogin } from '@/hooks/useJudgeLogin';
 import { login, logout, selectUser } from '@/store/user';
 import { Params } from '@/types/params';
 
-export const Auth = ({ children }: any) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const Auth = ({ children }: Props) => {
   const user = useSelector(selectUser);
   const router = useRouter();
   const { uid } = router.query as Params;
