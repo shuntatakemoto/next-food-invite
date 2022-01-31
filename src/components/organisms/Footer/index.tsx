@@ -1,4 +1,3 @@
-import { Emoji } from 'emoji-mart';
 import Link from 'next/link';
 import React from 'react';
 import { auth } from '@/libs/firebase';
@@ -15,19 +14,13 @@ export const Footer: React.FC<FooterProps> = ({ isSignedIn }) => {
           <p className='text-xl font-bold'>Home</p>
         </Link>
       ) : (
-        <div className=''>
-          <Emoji emoji='partying_face' size={32} />
-        </div>
+        <small>© 2022 Food Invite</small>
       )}
 
-      {isSignedIn ? (
+      {isSignedIn && (
         <button onClick={() => auth.signOut()} className='text-xl font-bold'>
           Logout
         </button>
-      ) : (
-        <div className=''>
-          <Emoji emoji='drooling_face' size={32} />
-        </div>
       )}
     </div>
   );
