@@ -21,7 +21,7 @@ export const ListContent: React.FC<ListContentProps> = (props) => {
         <div className='grid grid-cols-2 text-center xl:grid-cols-3'>
           {props.posts.map((post) => (
             <ListContentCard
-              key={post.name}
+              key={post.restaurantId}
               restaurantId={post.restaurantId}
               timestamp={post.timestamp}
               username={post.username}
