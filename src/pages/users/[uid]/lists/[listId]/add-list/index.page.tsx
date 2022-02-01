@@ -6,6 +6,7 @@ import React from 'react';
 import { useAddList } from './useAddList';
 import { Headline } from '@/components/atoms/Headline';
 import Layout from '@/components/templates/layout';
+import { useJudgeLogin } from '@/hooks/useJudgeLogin';
 
 type AddListProps = {
   postId: string;
@@ -16,6 +17,7 @@ type AddListProps = {
 };
 
 const AddList: React.FC<AddListProps> = () => {
+  useJudgeLogin();
   const {
     addList,
     setName,

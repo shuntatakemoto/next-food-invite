@@ -5,8 +5,10 @@ import 'emoji-mart/css/emoji-mart.css';
 import { useCreateList } from './useCreateList';
 import { Headline } from '@/components/atoms/Headline';
 import Layout from '@/components/templates/layout';
+import { useJudgeLogin } from '@/hooks/useJudgeLogin';
 
 const CreateList: React.FC = () => {
+  useJudgeLogin();
   const { createList, setListName, setEmojiName, listName } = useCreateList();
 
   return (

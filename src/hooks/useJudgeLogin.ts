@@ -12,12 +12,8 @@ export const useJudgeLogin = () => {
 
     if (user.uid && ((uid || listId) == '' || (uid || listId) == undefined)) {
       router.replace(`/users/${user.uid}`);
+    } else if (!user.uid) {
+      router.replace(`/`);
     }
-
-    //ログインしてない時はログインページに遷移させる
-    // if (!user.uid) {
-    //   console.log("user.uid == '')");
-    //   router.replace('/');
-    // }
   }, [user.uid]);
 };
