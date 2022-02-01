@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 import TextField from '@material-ui/core/TextField';
 import AddPhotoIcon from '@material-ui/icons/AddAPhoto';
 import firebase from 'firebase/app';
+import Image from 'next/image';
 import React from 'react';
 import { useAddList } from './useAddList';
 import { Headline } from '@/components/atoms/Headline';
@@ -67,7 +67,7 @@ const AddList: React.FC<AddListProps> = () => {
               </label>
               {/* プレビュー画像を表示 */}
               <div className='w-3/4 xl:w-2/5'>
-                <img src={fileUrl} alt='' />
+                {fileUrl && <Image src={fileUrl} alt='selected image' width='160' height='160' />}
               </div>
             </div>
 
